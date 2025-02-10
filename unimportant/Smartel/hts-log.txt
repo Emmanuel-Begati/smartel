@@ -1,0 +1,35 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 31 Jan 2025 10:47:48 at https://peacefulqode.co.in/themes/agritex/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://peacefulqode.co.in/themes/agritex/ -O1 "C:\Users\begat\Desktop\New folder\Smartel" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/css/openhand.cur (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/css/closedhand.cur (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/gridtile.png (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/gridtile_white.png (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/gridtile_3x3.png (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/gridtile_3x3_white.png (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/coloredbg.png (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/rev/assets/loader.gif (from https://peacefulqode.co.in/themes/agritex/rev/css/rs6.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/css/owl.video.play.png (from https://peacefulqode.co.in/themes/agritex/css/owl.carousel.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.woff?593e8c8fd7387e7c7f3e8c0e87ecc497 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.eot?593e8c8fd7387e7c7f3e8c0e87ecc497 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.ttf?593e8c8fd7387e7c7f3e8c0e87ecc497 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.svg?593e8c8fd7387e7c7f3e8c0e87ecc497 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_1/flaticon_agriculture.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.woff?8f4a8c0f2740f43209f0a89f30110148 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.eot?8f4a8c0f2740f43209f0a89f30110148 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.ttf?8f4a8c0f2740f43209f0a89f30110148 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.svg?8f4a8c0f2740f43209f0a89f30110148 (from https://peacefulqode.co.in/themes/agritex/font/flaticons_2/flaticon_mycollection.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.eot?v=2.0.0 (from https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.min.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.woff?v=2.0.0 (from https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.min.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.svg?v=2.0.0 (from https://peacefulqode.co.in/themes/agritex/font/ionicons/ionicons.min.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify.eot?-fvbane (from https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify-icons.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify.eot? (from https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify-icons.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify.ttf?-fvbane (from https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify-icons.css)
+10:50:28	Error: 	"Not Found" (404) at link https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify.svg?-fvbane (from https://peacefulqode.co.in/themes/agritex/font/themify-icons/themify-icons.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 46 seconds : 277 links scanned, 252 files written (109092179 bytes overall) [106092660 bytes received at 639112 bytes/sec], 3795687 bytes transferred using HTTP compression in 48 files, ratio 17%, 9.5 requests per connection
+(24 errors, 0 warnings, 0 messages)
