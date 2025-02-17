@@ -1998,7 +1998,7 @@ header#pq-header .pq-bottom-header {
 
 .pq-header-right .pq-header-icon .pq-search-button {
     width: 56px;
-    height: 56px;
+    /* height: 56px; */
     font-size: 20px;
     line-height: 50px;
     text-align: center;
