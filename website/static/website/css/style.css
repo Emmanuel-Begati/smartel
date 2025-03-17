@@ -5355,7 +5355,7 @@ footer#pq-footer .pq-footer-style-1 .pq-copyright-footer .pq-footer-social ul li
 .pq-icon-box.pq-style-5 .pq-icon-box-icon i {
     color: var(--white-color);
     font-size: 62px;
-    line-height: 70px;
+    line-height: 100px;
     text-align: center;
 }
 
@@ -7047,7 +7047,7 @@ img {
 }
 .partner-carousel .owl-stage {
     display: flex;
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 60s linear infinite;
 }
 
 @keyframes scroll-left {
