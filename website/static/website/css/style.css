@@ -7045,3 +7045,16 @@ img {
 .pq-list-item {
     word-wrap: break-word;
 }
+.partner-carousel .owl-stage {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
