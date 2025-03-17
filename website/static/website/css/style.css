@@ -119,21 +119,29 @@ Design and Developed by: Peacefulqode
 	Moz Selection
 ================================================*/
 :root {
-    --primary-color: #d4a65e;
-    --dark-color: #1c2e16;
-    --secondary-color: #666666;
-    --grey-color: #f6f4e6;
-    --white-color: #ffffff;
+    --primary-color: #6B8E23; /* Olive Green */
+    --dark-color: #0F1B00; /* Extracted Dark Green */
+    --secondary-color: #8B7355; /* Earthy Brown */
+    --grey-color: #DCE0D7; /* Extracted Soft Beige */
+    /* --grey-color: #F4F1E0; Soft Beige */
+
+    --white-color: #FFFDF6; /* Warm White */
+
     --body-fonts: "ClashDisplay";
     --title-fonts: "ClashDisplay";
+
     --border-radius: 20px;
     --big--border-radius: 900px;
+
     --transition-duration: 0.5s;
     --transition-timing-function: ease-in-out;
+
     --box-shadow: -4px -4px 1px 2px var(--primary-color);
     --border: 2px solid var(--primary-color);
     --border-white: 2px solid var(--white-color);
 }
+
+
 
 /*================================================
     General
