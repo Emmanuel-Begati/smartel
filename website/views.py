@@ -6,3 +6,6 @@ def index(request):
 
 def base(request):
     return render(request, 'website/base.html')
+
+def career(request):
+    return render(request, 'website/portfolio-details.html')

@@ -7003,3 +7003,45 @@ img {
         margin-top: -60px;
     }
 }
+
+
+/* Ensure no overflow in sections */
+.portfolio-single {
+    overflow: hidden;
+}
+
+.pq-breadcrumb-style-1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Fix issues with large images in the owl carousel */
+.owl-carousel .item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Adjusting for smaller screen sizes */
+@media (max-width: 768px) {
+    .pq-single-post-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pq-single-post-nav {
+        margin-bottom: 10px;
+    }
+}
+
+/* Ensuring proper spacing for side elements */
+.pq-portfolio-info-box {
+    padding: 20px;
+    background-color: #f7f7f7;
+    margin-top: 20px;
+}
+
+/* Making sure text inside lists doesn't overflow */
+.pq-list-item {
+    word-wrap: break-word;
+}
