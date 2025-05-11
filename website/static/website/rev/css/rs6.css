@@ -259,6 +259,20 @@ rs-carousel-wrap rs-column rs-layer img { width: 0px; height: 0px; }
 rs-sbg-px,
 rs-sbg-wrap {position:absolute; top:0px; left:0px; z-index:0;width:100%;height:100%;display: block;}
 
+/* Banner dimming overlay for better text visibility */
+rs-sbg-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black overlay */
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
 a.rs-layer,
 a.rs-layer:-webkit-any-link { text-decoration: none }
 

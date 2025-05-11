@@ -14,6 +14,29 @@
             border-bottom: 3px solid #6b8e23;
         }
         
+        /* Revolution Slider Background Overlay - Added to improve text visibility */
+        rs-slide::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.60); /* Dark overlay with 35% opacity */
+            z-index: 2;  /* Position above the background but below the content */
+        }
+        
+        /* Ensure slider content remains above the overlay */
+        rs-layer {
+            z-index: 5 !important;
+        }
+        
+        /* Enhanced text shadow for better readability */
+        rs-layer[id*="layer-1"] {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+        }
+        
         .pq-solution-section::before {
             content: '';
             position: absolute;
@@ -125,11 +148,11 @@
                             data-text="w:normal;s:72,64,56,40;l:80,72,64,48;fw:500;a:center;"
                             data-frame_0="y:50,39,29,17;" data-frame_1="st:1000;sp:1000;sR:1000;"
                             data-frame_999="o:0;st:w;sR:7000;"
-                            style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;">
+                            style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;color:var(--dark-color);text-shadow:1px 1px 3px rgba(255,255,255,0.5);">
                             Early Crop Pest And<br />
-                            <span class="rc-color">Disease</span> Detection Technology
-                            <h5 class="pq-title-hadding" id='title-text' style="color: #c0b129; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Future-Proofing Our Food Systems, One Farm at a Time.<br> 
-                                <span style="color: #c0b129; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">- Powered by Smartel</span></h5>
+                            <span style="color:var(--primary-color);font-weight:700;text-shadow:1px 1px 3px rgba(255,255,255,0.7);">Disease</span> Detection Technology
+                            <h5 class="pq-title-hadding" id='title-text' style="color: var(--dark-color); text-shadow: 1px 1px 4px rgba(255,255,255,0.7);">Future-Proofing Our Food Systems, One Farm at a Time.<br> 
+                                <span style="color: var(--secondary-color); font-weight: 600; text-shadow: 1px 1px 3px rgba(255,255,255,0.7);">-</span></h5>
                         </rs-layer>
     
                         <a id="slider-8-slide-31-layer-2" class="rs-layer rev-btn"
@@ -139,8 +162,8 @@
                             data-padding="t:12,12,12,10;r:30;b:12,12,12,10;l:30;"
                             data-border="bor:500px,500px,500px,500px;" data-frame_0="y:50,39,29,17;"
                             data-frame_1="st:1300;sp:1000;sR:1300;" data-frame_999="o:0;st:w;sR:6700;"
-                            data-frame_hover="bgc:#1c2e16;bor:25px,25px,25px,25px;bri:120%;"
-                            style="z-index:7;background-color:#6b8e23;font-family:'ClashDisplay';text-transform:uppercase;">
+                            data-frame_hover="bgc:var(--dark-color);bor:25px,25px,25px,25px;bri:120%;"
+                            style="z-index:7;background-color:var(--primary-color);font-family:'ClashDisplay';text-transform:uppercase;color:var(--white-color);">
                             See Our Services
                         </a>
                     </rs-slide>
@@ -155,7 +178,7 @@
                             data-dim="w:90px,70px,65px,60px;h:49px,38px,35px,32px;" data-frame_0="y:50,39,29,17;"
                             data-frame_1="st:700;sp:1000;sR:700;" data-frame_999="o:0;st:w;sR:7300;"
                             style="z-index:5;">
-                            <img src="{% static 'website/rev/assets/page-1/group_14610462.png' %}" alt="" class="tp-rs-img"
+                            <img src="{% static 'website/image/section-image/group_new.png' %}" alt="" class="tp-rs-img"
                                 width="135" height="73" data-no-retina>
                         </rs-layer>
     
@@ -164,9 +187,10 @@
                             data-text="w:normal;s:72,64,56,40;l:80,72,64,48;fw:500;a:center;"
                             data-frame_0="y:50,39,29,17;" data-frame_1="st:1000;sp:1000;sR:1000;"
                             data-frame_999="o:0;st:w;sR:7000;"
-                            style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;">
-                            Empowering<br />
-                            <span class="rc-color">Generation</span> of Farmers
+                            style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;color:var(--dark-color);text-shadow:1px 1px 3px rgba(255,255,255,0.5);">
+                            Democratizing AI<br />
+                            <span style="color:var(--primary-color);font-weight:700;text-shadow:1px 1px 3px rgba(255,255,255,0.7);">for Climate</span> Resilience
+                            
                         </rs-layer>
     
                         <a id="slider-8-slide-32-layer-2" class="rs-layer rev-btn"
@@ -176,8 +200,8 @@
                             data-padding="t:12,12,12,10;r:30;b:12,12,12,10;l:30;"
                             data-border="bor:500px,500px,500px,500px;" data-frame_0="y:50,39,29,17;"
                             data-frame_1="st:1300;sp:1000;sR:1300;" data-frame_999="o:0;st:w;sR:6700;"
-                            data-frame_hover="bgc:#1c2e16;bor:25px,25px,25px,25px;bri:120%;"
-                            style="z-index:7;background-color:#6b8e23;font-family:'ClashDisplay';text-transform:uppercase;">
+                            data-frame_hover="bgc:var(--dark-color);bor:25px,25px,25px,25px;bri:120%;"
+                            style="z-index:7;background-color:var(--primary-color);font-family:'ClashDisplay';text-transform:uppercase;color:var(--white-color);">
                             See Our Services
                         </a>
                     </rs-slide>
@@ -196,11 +220,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="pq-image-border pq-ms-15">
-                                    <img class="pq-image-1" src="{% static 'website/image/about/challenges-2.jpg' %}" alt="about-image">
+                                    <img class="pq-image-1" src="{% static 'website/image/about/challenges-2.png' %}" alt="about-image">
                                 </div>
                             </div>
                             <div class="col-md-6 mt-4 mt-md-0">
-                                <img class="pq-image-2" src="{% static 'website/image/about/challenges-1.jpg' %}" alt="about-image">
+                                <img class="pq-image-2" src="{% static 'website/image/about/challenges-1.png' %}" alt="about-image">
                             </div>
                         </div>
                     </div>
@@ -214,12 +238,14 @@
                                 <img src="{% static 'website/image/section-image/group_new.png' %}" alt="image">
                                 <span>The Problem</span>
                             </div>
-                            <h5 class="pq-title-hadding">Challenges in Modern Agriculture</h5>
+                            <!-- <h5 class="pq-title-hadding">Challenges in Modern Agriculture</h5> -->
                             <br>
                             <div class="problem-paragraph">
-                                <p class="pq-title-description mb-4">Globally, pests and diseases account for an estimated 20-48% reduction in crop yields annually. - (UN FAO) Delayed detection of crop pest and diseases accounts for 47% of crop loss in every farming season across the world. 38% CO2 Emission comes from fertilizers, Chemicals & Leading to soil degradation (UNEP)</p>
+                                <p class="pq-title-description mb-4">Globally, pests and diseases account for an estimated 20-48% reduction in crop yields annually. - (UN FAO). <br> Delayed detection of crop pest and diseases accounts for 47% of crop loss in every farming season across the world. 38% CO2 Emission comes from fertilizers, Chemicals & Leading to soil degradation (UNEP)</p>
                                 
-                                <p class="pq-title-description">In Sub-Saharan Africa, certain pests alone cause annual cereal grain losses of about 4.1 million metric tonnes. - (UNEP) We are addressing challenges of delayed pest and disease identification that often lead to loss of yield, use of heavy fertilizers that contribute significantly to CO2 emissions and soil degradation.</p>
+                                <p class="pq-title-description">In Sub-Saharan Africa, certain pests alone cause annual cereal grain losses of about 4.1 million metric tonnes. - (UNEP). </p>
+                                <p class="pq-title-description">We are addressing challenges of delayed pest and disease identification that often lead to loss of yield, use of heavy fertilizers that contribute significantly to CO2 emissions and soil degradation. </p>
+
                             </div>
                         </div>
                     </div>
