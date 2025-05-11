@@ -1,561 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'website/base.html' %}
+{% load static %}
 
-
-<!-- Mirrored from peacefulqode.co.in/themes/agritex/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Jan 2025 08:50:28 GMT -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agritex - Agriculture & Organic Farm HTML Template</title>
-
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="image/favicon/favicon.png">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Animation -->
-    <link rel="stylesheet" href="css/animations.min.css">
-
-    <!-- Owl slider -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-
-    <!-- Magnafic Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.min.css">
-
-    <!-- Font Link -->
-    <link rel="stylesheet" href="font/flaticons_1/flaticon_agriculture.css">
-    <link rel="stylesheet" href="font/flaticons_2/flaticon_mycollection.css">
-    <link rel="stylesheet" href="font/ionicons/ionicons.min.css">
-    <link rel="stylesheet" href="font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="font/font-awesome/css/all.min.css">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-    <!-- loading -->
-    <div id="pq-loading">
-        <div id="pq-loading-center">
-            <img src="image/logo/logo-1.png" alt="loading">
+{% block content %}
+<!-- Breadcrumb -->
+<section class="pq-breadcrumb-style-1">
+    <div class="container">
+        <div class="pq-breadcrumb">
+            <h1 class="pq-breadcrumb-title">Contact Us</h1>
         </div>
     </div>
+</section>
 
-    <!-- Header -->
-    <header id="pq-header" class="pq-header-style-1 pq-has-sticky">
-        <div class="pq-top-header top-style-1">
-            <div class="container-fluid">
-                <div class="top-header-row">
-                    <div class="pq-header-contact text-right">
-                        <ul>
-                            <li>
-                                <i class="flaticon-location"></i>
-                                <span>Broklyn Golden Street.</span>
-                            </li>
-
-                            <li>
-                                <a href="mailto:info@peacefulqode.com"><i
-                                        class="flaticon-mail"></i><span>info@peacefulqode.com</span></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="pq-header-social ">
-                        <ul>
-                            <li><a href="http://facebook/"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="http://google/"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="http://youtube/"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="http://linedin/"><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="pq-bottom-header">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg navbar-light">
-
-                        <div class="pq-header-logo">
-                        <a class="navbar-brand" href="https://agritex.peacefulqode.co.in/">
-                            <img class="img-fluid logo"
-                                src="image/logo/logo-1.png"
-                                alt="agritex">
-                        </a>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <div class="pq-menu-contain">
-                            <ul class="pq-main-menu">
-                                <li class="menu-item">
-                                    <a href="#">home</a>
-                                    <i class="fa fa-chevron-down pq-submenu-icon"></i>
-
-                                    <ul class="sub-menu">
-                                        <li class="menu-item">
-                                            <a href="index-2.html">home 1</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="index-3.html">home 2</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="index-4.html">home 3</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item">
-                                    <a href="#">pages</a>
-                                    <i class="fa fa-chevron-down pq-submenu-icon"></i>
-
-                                    <ul class="sub-menu">
-                                        <li class="menu-item">
-                                            <a href="about-us.html">about us</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="our-service.html">our services</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="our-farmers.html">our farmers</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="farm-gallery.html">farm gallery</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="our-history.html">our history</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="pricing-plan.html">pricinng plan</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="faq.html">faq</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="404.html">404</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item">
-                                    <a href="#">portfolio</a>
-                                    <i class="fa fa-chevron-down pq-submenu-icon"></i>
-
-                                    <ul class="sub-menu">
-                                        <li class="menu-item">
-                                            <a href="stander.html">stander</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="masonery.html">masonry</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="3-column.html">3 column</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="4-column.html">4 column</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="portfolio-details.html">portfolio details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item">
-                                    <a href="#">blog</a>
-                                    <i class="fa fa-chevron-down pq-submenu-icon"></i>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item">
-                                            <a href="blog-grid.html">blog grid</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="blog-list.html">blog list</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">blog sidebar</a>
-                                            <i class="fa fa-chevron-down pq-submenu-icon"></i>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="blog-sidebar-right-sidebar.html">right sidebar</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="blog-sidebar-left-sidebar.html">left sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="blog-single.html">blog single</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item current-menu-item">
-                                    <a href="contact-us.html">contact us</a>
-                                </li>
-
-                            </ul>
+<!-- Contact Form Section -->
+<section class="contact-form py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="pq-section-title">
+                    <div class="pq-title">
+                        <div class="pq-title-sub-title">
+                            <img src="{% static 'website/image/section-image/group_new.png' %}" alt="icon">
+                            <span>Get In Touch</span>
                         </div>
-                    </div>
-
-
-                    <div class="pq-header-right">
-                        <div class="pq-header-icon">
-                            <div class="pq-header-contact">
-                                <a href="tel:+1800001658">
-                                    <div class="pq-icon">
-                                        <i class="flaticon-phone-call"></i>
-                                    </div>
-                                    <span>+1800-001-658</span>
-                                </a>
-                            </div>
-                            <div class="pq-search-button">
-                                <a href="javascript:void(0)" class="pq-tools-serach-button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvassearch">
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.6337 27.8663L21.1025 19.335C22.755 17.2938 23.75 14.7 23.75 11.875C23.75 5.32752 18.4225 0 11.875 0C5.32746 0 0 5.32746 0 11.875C0 18.4225 5.32752 23.75 11.875 23.75C14.7 23.75 17.2938 22.755 19.335 21.1025L27.8663 29.6337C28.11 29.8775 28.43 30 28.75 30C29.0701 30 29.39 29.8775 29.6338 29.6337C30.1225 29.145 30.1225 28.355 29.6337 27.8663ZM11.875 21.25C6.705 21.25 2.50002 17.045 2.50002 11.875C2.50002 6.70494 6.705 2.49996 11.875 2.49996C17.045 2.49996 21.25 6.70494 21.25 11.875C21.25 17.045 17.045 21.25 11.875 21.25Z"
-                                            fill="white"></path>
-                                    </svg>
-                                </a>
-                                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvassearch">
-                                    <form role="search" method="get" class="search-form">
-                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"></button>
-                                        <label>
-                                            <input type="search" class="search-field" placeholder="Search …" value=""
-                                                name="s">
-                                        </label>
-                                        <button type="submit" class="search-submit">
-                                            <span class="screen-reader-text"></span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="pq-btn-container">
-                                <a href="#" class="pq-button pq-button-flat">
-                                    <span class="pq-button-text">GET IN TOUCH</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <section class="pq-breadcrumb-style-1">
-        <div class="container">
-            <div class="pq-breadcrumb">
-                <h1 class="pq-breadcrumb-title">Contact</h1>
-            </div>
-        </div>
-    </section>
-
-    <!-- map -->
-    <section class="map">
-        <div class="container">
-            <div class="pq-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317893.9737282887!2d-0.11951900000000001!3d51.503186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1733830682629!5m2!1sen!2sus"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Write To Us -->
-    <section class="contact pq-bg-gray pq-bg-expand">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="pq-section-title text-start pe-3 wow fadeInRight">
-                        <div class="pq-title">
-                            <div class="pq-title-sub-title">
-                                <img src="image/section-image/group_1727.png" alt="image">
-                                <span>Write to Us</span>
-                            </div>
-                            <h5 class="pq-title-hadding">How We Can Help Your <span>Farm Grow</span></h5>
-                        </div>
-                    </div>
-
-                    <div class="pq-icon-box pq-style-3 wow fadeInRight">
-                        <div class="pq-icon-box-icon">
-                            <i aria-hidden="true" class=" flaticon-phone-call"></i>
-                        </div>
-                        <div class="pq-icon-box-content">
-                            <h5 class="pq-icon-box-title">Have Question?</h5>
-                            <p class="pq-icon-box-description">Free +92 (8800)-9850</p>
-                        </div>
-                    </div>
-
-                    <div class="pq-icon-box pq-style-3 mt-4 wow fadeInRight">
-                        <div class="pq-icon-box-icon">
-                            <i aria-hidden="true" class=" flaticon-mail"></i>
-                        </div>
-                        <div class="pq-icon-box-content">
-                            <h5 class="pq-icon-box-title">Write Email</h5>
-                            <p class="pq-icon-box-description">peacefulqode@gmail .com </p>
-                        </div>
-                    </div>
-
-                    <div class="pq-icon-box pq-style-3 mt-4 wow fadeInRight">
-                        <div class="pq-icon-box-icon">
-                            <i aria-hidden="true" class=" flaticon-location"></i>
-                        </div>
-                        <div class="pq-icon-box-content">
-                            <h5 class="pq-icon-box-title"> Visit Now</h5>
-                            <p class="pq-icon-box-description">88 Broklyn Golden Street. USA</p>
-                        </div>
+                        <h5 class="pq-title-hadding">Have Questions or Want to Partner?</h5>
+                        <p class="pq-title-description mt-4">
+                            We're always looking to connect with farmers, organizations, and potential partners who are interested in improving agricultural practices through technology.
+                        </p>
                     </div>
                 </div>
 
-                <div class="col-lg-7 ps-lg-5 mt-5 mt-lg-0">
-                    <div class="pq-form-box pq-style-1 wow  fadeInLeft animated wow fadeInRight">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="pq-form">
-                                    <input type="text" id="name" placeholder="Full Name">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="pq-form">
-                                    <input type="text" id="email" placeholder="Email Address">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="pq-form">
-                                    <input type="text" id="Phone" placeholder="Phone Number">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="pq-form">
-                                    <input type="text" id="subject" placeholder="Service">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="pq-form">
-                                    <textarea placeholder="Write Your Message.."></textarea>
-                                </div>
-                            </div>
-
-                            <div class="pq-btn-container">
-                                <a class="pq-button pq-button-flat" href="#">
-                                    <div class="pq-button-block">
-                                        <span class="pq-button-text">Get in touch</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- cinet -->
-    <section class="clinet">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="pq-client-box-slider pq-style-2">
-                        <div class="pq-clint-box-border">
-                            <h3 class="pq-client-box-title">We Workrd With Global Latest Brands</h3>
-                        </div>
-                        <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false"
-                            data-desk_num="5" data-lap_num="2" data-tab_num="2" data-mob_num="2" data-mob_sm="1"
-                            data-autoplay="false" data-loop="true" data-margin="30">
-                            <div class="item">
-                                <div class="pq-client-box pq-style-2">
-                                    <a href="#">
-                                        <img src="image/client-box/style-2/1-2.png" alt="client-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="pq-client-box pq-style-2">
-                                    <a href="#">
-                                        <img src="image/client-box/style-2/2.png" alt="client-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="pq-client-box pq-style-2">
-                                    <a href="#">
-                                        <img src="image/client-box/style-2/3.png" alt="client-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="pq-client-box pq-style-2">
-                                    <a href="#">
-                                        <img src="image/client-box/style-2/6.png" alt="client-image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="pq-client-box pq-style-2">
-                                    <a href="#">
-                                        <img src="image/client-box/style-2/7.png" alt="client-image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer id="pq-footer">
-        <div class="pq-footer-style-1">
-            <div class="pq-footer-top">
-                <div class="container">
-                    <div class="pq-footer-top-widget">
-                        <div class="pq-footer-column-1">
-                            <div class="widget">
-                                <h2 class="pq-footer-title">Get in Touch with Our Team for Expert Agricultural<span>
-                                        Support
-                                        and Solutions
-                                    </span></h2>
-                            </div>
-                        </div>
-                        <div class="pq-footer-column-2">
-                            <div class="widget">
-                                <div class="pq-popup-animation pq-style-1">
-                                    <div class="pq-popup-inner">
-                                        <div class="pq-popup-content">
-                                            <a href="#">
-                                                <i class="ti-arrow-top-right"></i>
-                                            </a>
-                                        </div>
-                                        <img src="image/popup/popup-animation.png" alt="pop-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pq-footer-column-3">
-                            <img src="image/logo/logo2.png" class="pq-footer-logo" alt="agritex-footer-logo">
-                        </div>
-                        <div class="pq-footer-column-4">
-                            <div class="widget">
-                                <div class="menu-footer-container">
-                                    <ul id="menu-footer" class="menu">
-                                        <li class="menu-item">
-                                            <a href="index-2.html" aria-current="page">Home</a>
-                                        </li>
-                                        <li class="menu-item"><a href="about-us.html">About
-                                                Us</a></li>
-                                        <li class="menu-item"><a href="our-service.html">Services</a></li>
-                                        <li class="menu-item"><a href="blog-single.html">Blog</a></li>
-                                        <li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="pq-copyright-footer">
-                <div class="container">
+                <!-- Contact Details -->
+                <div class="contact-details mt-5">
                     <div class="row">
-                        <div class="col-lg-8">
-                            <span class="pq-copyright">
-                                <p>
-                                    Copyright 2024 Agritex Theme by <a href="https://peacefulqode.com/">
-                                        Peacefulqode </a>
-                                    | All Rights Reserved </p>
-                            </span>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info-box p-4 rounded bg-light">
+                                <div class="icon-box mb-3">
+                                    <i class="flaticon-phone-call text-success"></i>
+                                </div>
+                                <h5>Call Us</h5>
+                                <p class="mb-0"><a href="tel:+250791704244" class="text-dark">+250 791 704 244</a></p>
+                            </div>
                         </div>
-
-                        <div class="col-lg-4">
-                            <div class="pq-footer-social">
-                                <span>Follow Us : </span>
-                                <ul>
-                                    <li>
-                                        <a href="http://facebook/">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://google/">
-                                            <i class="fab fa-google-plus-g"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://youtube/">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://linedin/">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info-box p-4 rounded bg-light">
+                                <div class="icon-box mb-3">
+                                    <i class="flaticon-mail text-success"></i>
+                                </div>
+                                <h5>Email Us</h5>
+                                <p class="mb-0"><a href="mailto:Sentra@gmail.com" class="text-dark">Sentra@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Social Media -->
+                    <div class="social-links mt-4">
+                        <h5 class="mb-3">Follow Us</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item me-3">
+                                <a href="https://www.instagram.com/Smartelglobal" target="_blank" class="social-icon">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a href="https://www.linkedin.com/company/Smartelglobal" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.youtube.com/c/Smartelglobal" target="_blank" class="social-icon">
+                                    <i class="fab fa-youtube fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <!-- Contact Form -->
+                <form class="pq-contact-form mt-4" id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <textarea class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="pq-button pq-button-flat">
+                                <span class="pq-button-text">Send Message</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853842806!2d29.98622920944621!3d-1.9435568051927463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xf32b36a5411f0de7!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2sug!4v1715420368431!5m2!1sen!2sug" 
+                    width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- back-to-top -->
-    <div id="back-to-top">
-        <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
     </div>
+</section>
 
-    <!-- jquery js -->
-    <script src="js/jquery-3.7.1.js"></script>
+<!-- Mission Statement -->
+<section class="mission-statement bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4 class="mb-3">Our Mission</h4>
+                <p class="lead">Our mission is to mainstream advanced agricultural technologies making them affordable and accessible, fostering food security, and ensuring environmental sustainability.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+<style>
+    .contact-info-box {
+        transition: all 0.3s ease;
+        border-left: 3px solid #6b8e23;
+    }
+    
+    .contact-info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .icon-box i {
+        font-size: 2.5rem;
+        color: #6b8e23;
+    }
+    
+    .social-icon {
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+        color: #6b8e23;
+        transform: translateY(-3px);
+    }
+    
+    #contactForm button {
+        background-color: #6b8e23;
+        transition: all 0.3s ease;
+    }
+    
+    #contactForm button:hover {
+        background-color: #556b1e;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(107, 142, 35, 0.3);
+    }
+    
+    .map-container {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .map-container:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .mission-statement {
+        border-top: 3px solid #6b8e23;
+        border-bottom: 3px solid #6b8e23;
+        background: linear-gradient(135deg, rgba(107, 142, 35, 0.05) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(107, 142, 35, 0.05) 100%);
+    }
+    
+    .mission-statement h4 {
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .mission-statement h4:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: #6b8e23;
+    }
+    
+    .mission-statement p {
+        max-width: 800px;
+        margin: 0 auto;
+        color: #444;
+    }
+</style>
 
-    <!-- gsap js -->
-    <script src="js/gsap.min.js"></script>
-
-    <!-- scrolltrigger js -->
-    <script src="js/ScrollTrigger.min.js"></script>
-
-    <!-- Magnafic Popup js -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-
-    <!-- Owl js -->
-    <script src="js/owl.carousel.js"></script>
-
-    <!-- isotope js -->
-    <script src="js/isotope.pkgd.min.js"></script>
-
-    <!-- load more js -->
-    <script src="js/load-more.js"></script>
-
-    <!-- WOW -->
-    <script src="js/wow.min.js"></script>
-
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-
-</body>
-
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpbh-mt'},{'server':'sg2plmcpnl492384'},{'dcenter':'sg2'},{'cp_id':'9858662'},{'cp_cache':''},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../../../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
-<!-- Mirrored from peacefulqode.co.in/themes/agritex/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Jan 2025 08:50:28 GMT -->
-</html>
+<script>
+    // Form validation and submission handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple form validation feedback
+                let formValid = true;
+                const formInputs = contactForm.querySelectorAll('input[required], textarea[required]');
+                
+                formInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.classList.add('is-invalid');
+                        formValid = false;
+                    } else {
+                        input.classList.remove('is-invalid');
+                        input.classList.add('is-valid');
+                    }
+                });
+                
+                if (formValid) {
+                    // Show success message (in a real scenario, this would send data to a server)
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success mt-3';
+                    successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                    
+                    contactForm.appendChild(successMessage);
+                    contactForm.reset();
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.remove();
+                        formInputs.forEach(input => {
+                            input.classList.remove('is-valid');
+                        });
+                    }, 5000);
+                }
+            });
+            
+            // Remove invalid class on input
+            contactForm.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.classList.remove('is-invalid');
+                    }
+                });
+            });
+        }
+    });
+</script>
+{% endblock %}

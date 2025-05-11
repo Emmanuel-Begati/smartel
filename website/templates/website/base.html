@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agritex - Agriculture & Organic Farm HTML Template</title>
+    <title>Sentra - Solar-Powered Crop Pest Detection</title>
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="{% static 'website/image/favicon/favicon.png' %}">
@@ -32,6 +32,12 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    
+    <!-- Solution Animations CSS -->
+    <link rel="stylesheet" href="{% static 'website/css/solution-animations.css' %}">
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Sentra - Solar-powered crop pest and disease detection technology. Real-time monitoring, early detection, and AI-driven insights to protect smallholder farmers' crops.">
 </head>
 
 <body>
@@ -92,27 +98,31 @@
                         <div class="pq-menu-contain">
                             <ul class="pq-main-menu">
                                 <li class="menu-item current-menu-item">
-                                    <a href="#">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                     
                                 <li class="menu-item">
-                                    <a href="#about">About</a>
+                                    <a href="/#about">About</a>
                                 </li>
                     
                                 <li class="menu-item">
-                                    <a href="#features">Features</a>
+                                    <a href="/#features">Features</a>
                                 </li>
                     
                                 <li class="menu-item">
-                                    <a href="#impact">Impact</a>
+                                    <a href="/#impact">Impact</a>
+                                </li>
+                                
+                                <li class="menu-item">
+                                    <a href="{% url 'product' %}">Our Product</a>
                                 </li>
                     
                                 <li class="menu-item">
-                                    <a href="#faq">Careers</a>
+                                    <a href="{% url 'portfolio-details' %}">Careers</a>
                                 </li>
                     
                                 <li class="menu-item">
-                                    <a href="#contact">Contact</a>
+                                    <a href="{% url 'contact' %}">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -192,12 +202,12 @@
                             <div class="menu-footer-container">
                                 <ul id="menu-footer" class="menu">
                                     <li class="menu-item">
-                                        <a href="index.html" aria-current="page">Home</a>
+                                        <a href="/" aria-current="page">Home</a>
                                     </li>
-                                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
-                                    <li class="menu-item"><a href="our-service.html">Services</a></li>
-                                    <li class="menu-item"><a href="blog.html">Blog</a></li>
-                                    <li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
+                                    <li class="menu-item"><a href="/#about">About Us</a></li>
+                                    <li class="menu-item"><a href="{% url 'product' %}">Our Product</a></li>
+                                    <li class="menu-item"><a href="{% url 'portfolio-details' %}">Careers</a></li>
+                                    <li class="menu-item"><a href="{% url 'contact' %}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

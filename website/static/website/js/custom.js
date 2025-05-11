@@ -23,6 +23,7 @@ Design and Developed by: Peacefulqode
 ==> Magnific Popup
 ==> Bg Extend
 ==> counter
+==> Smooth Scrolling
 
 ==================================================
 [ End table content ]
@@ -38,6 +39,52 @@ Design and Developed by: Peacefulqode
     jQuery("#pq-loading").delay(0).fadeOut("slow");
 
     var Scrollbar = window.Scrollbar;
+    
+    /*==================================================
+    [ Smooth Scrolling for Anchor Links ]
+    ==================================================*/
+    // Select all links with hashes
+    jQuery('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .not('[href*="#tab"]')  // Exclude tab links
+      .click(function(event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+          && 
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = jQuery(this.hash);
+          target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually going to happen
+            event.preventDefault();
+            
+            // Calculate header height for offset
+            var headerHeight = jQuery('.pq-header-sticky').outerHeight() || 0;
+            
+            jQuery('html, body').animate({
+              scrollTop: target.offset().top - headerHeight
+            }, 800, function() {
+              // Callback after animation
+              // Change focus
+              var $target = jQuery(target);
+              $target.focus();
+              if ($target.is(":focus")) { // Checking if the target was focused
+                return false;
+              } else {
+                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                $target.focus(); // Set focus again
+              }
+            });
+          }
+        }
+      });
+
     /*==================================================
     [ Hover Active ]
     ==================================================*/
@@ -530,5 +577,86 @@ Design and Developed by: Peacefulqode
         }
       });
     });
+
+    /*==================================================
+    [ Enhanced Solution Section Hover ]
+    ==================================================*/
+    jQuery(document).ready(function() {
+      // Enhanced hover animations for solution boxes
+      jQuery('.solution-box').hover(function() {
+        jQuery(this).find('.solution-icon').addClass('pulse-animation');
+      }, function() {
+        jQuery(this).find('.solution-icon').removeClass('pulse-animation');
+      });
+      
+      // Add floating animation to specific elements
+      function addFloatingAnimation() {
+        jQuery('.product-hero-image, .dashboard-image').each(function() {
+          let element = jQuery(this);
+          let randomDelay = Math.random() * 2;
+          
+          gsap.to(element, {
+            y: -15,
+            duration: 2.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: randomDelay
+          });
+        });
+      }
+      
+      // Initialize floating animations if GSAP is loaded
+      if (typeof gsap !== 'undefined') {
+        addFloatingAnimation();
+      }
+      
+      // Add subtle parallax effect to the solution section background
+      jQuery(window).scroll(function() {
+        const scrollTop = jQuery(window).scrollTop();
+        jQuery('.pq-solution-section::before').css({
+          'transform': 'translateY(' + (scrollTop * 0.1) + 'px)'
+        });
+        jQuery('.pq-solution-section::after').css({
+          'transform': 'translateY(' + (scrollTop * -0.05) + 'px)'
+        });
+      });
+    });
   });
 })(jQuery);
+
+/*==================================================
+[ Add custom styles ]
+==================================================*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Add the CSS for the pulse animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes pulse-animation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse-animation {
+      animation: pulse-animation 1.5s infinite ease-in-out;
+    }
+    
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .feature-card:hover .feature-icon, 
+    .process-step:hover .step-icon {
+      transform: translateY(-8px);
+      transition: transform 0.5s ease;
+    }
+    
+    .btn-pulse {
+      animation: pulse-animation 2s infinite;
+    }
+  `;
+  document.head.appendChild(style);
+});

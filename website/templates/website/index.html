@@ -2,6 +2,102 @@
 {%load static%}
 
 {% block content %}
+    <!-- Custom CSS for Solution Section -->
+    <style>
+        /* Solution Section Styling */
+        .pq-solution-section {
+            position: relative;
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            overflow: hidden;
+            border-top: 3px solid #6b8e23;
+            border-bottom: 3px solid #6b8e23;
+        }
+        
+        .pq-solution-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(107, 142, 35, 0.1) 0%, rgba(255, 255, 255, 0) 75%);
+            z-index: 0;
+        }
+        
+        .pq-solution-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .solution-device {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+        
+        .pq-solution-section:hover .solution-device {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(107, 142, 35, 0.25);
+        }
+        
+        .solution-box {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-left: 3px solid transparent;
+        }
+        
+        .solution-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-left: 3px solid #6b8e23;
+        }
+        
+        .solution-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .pq-solution-section .pq-title-hadding span {
+            color: #6b8e23;
+            position: relative;
+        }
+        
+        .pq-solution-section .pq-title-hadding span::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #6b8e23;
+        }
+        
+        /* Animated background effect */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .pq-solution-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(-45deg, rgba(107, 142, 35, 0.05), rgba(255, 255, 255, 0), rgba(107, 142, 35, 0.08));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: 1;
+        }
+    </style>
+
     <!-- banner --> 
     <div class="banner py-0">
         <!-- START Home 1 REVOLUTION SLIDER 6.6.18 -->
@@ -12,7 +108,7 @@
                 <rs-slides style="overflow: hidden; position: absolute;">
                     <rs-slide style="position: absolute;" data-key="rs-31" data-title="Slide" data-anim="ms:600;p:dark;"
                         data-in="o:0;" data-out="o:0;">
-                        <img src="{% static 'website/rev/assets/page-1/1-4.png' %}" alt="" title="1" width="1920" height="1080"
+                        <img src="{% static 'website/rev/assets/page-1/1-4.jpg' %}" alt="" title="1" width="1920" height="1080"
                             class="rev-slidebg tp-rs-img" data-panzoom="d:10000;ss:100%;se:120%;" data-no-retina>
     
                         <rs-layer id="slider-8-slide-31-layer-0" data-type="image" data-rsp_ch="on"
@@ -30,14 +126,14 @@
                             data-frame_0="y:50,39,29,17;" data-frame_1="st:1000;sp:1000;sR:1000;"
                             data-frame_999="o:0;st:w;sR:7000;"
                             style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;">
-                            Pest and<br />
+                            Early Crop Pest And<br />
                             <span class="rc-color">Disease</span> Detection Technology
-                            <h5 class="pq-title-hadding" id='title-text'>Future-Proofing Our Food Systems, One Farm at a Time.<br> 
-                                <span>- Powered by Smartel</span></h5>
+                            <h5 class="pq-title-hadding" id='title-text' style="color: #c0b129; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Future-Proofing Our Food Systems, One Farm at a Time.<br> 
+                                <span style="color: #c0b129; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">- Powered by Smartel</span></h5>
                         </rs-layer>
     
                         <a id="slider-8-slide-31-layer-2" class="rs-layer rev-btn"
-                            href="#}" target="_self" data-type="button"
+                            href="#problem" target="_self" data-type="button"
                             data-xy="x:c;y:m;yo:200px,190px,230px,150px;" data-text="w:normal;s:18,18,16,16;l:32;"
                             data-dim="minh:0px,none,none,none;" data-rsp_bd="off"
                             data-padding="t:12,12,12,10;r:30;b:12,12,12,10;l:30;"
@@ -51,7 +147,7 @@
     
                     <rs-slide style="position: absolute;" data-key="rs-32" data-title="Slide" data-anim="ms:600;p:dark;"
                         data-in="o:0;" data-out="o:0;">
-                        <img src="{% static 'website/rev/assets/page-1/2-3.png' %}" alt="" title="2" width="1920" height="1080"
+                        <img src="{% static 'website/rev/assets/page-1/2-3.jpg' %}" alt="" title="2" width="1920" height="1080"
                             class="rev-slidebg tp-rs-img" data-panzoom="d:10000;ss:100%;se:120%;" data-no-retina>
     
                         <rs-layer id="slider-8-slide-32-layer-0" data-type="image" data-rsp_ch="on"
@@ -74,7 +170,7 @@
                         </rs-layer>
     
                         <a id="slider-8-slide-32-layer-2" class="rs-layer rev-btn"
-                            href="#}" target="_self" data-type="button"
+                            href="#features" target="_self" data-type="button"
                             data-xy="x:c;y:m;yo:200px,190px,230px,150px;" data-text="w:normal;s:18,18,16,16;l:32;"
                             data-dim="minh:0px,none,none,none;" data-rsp_bd="off"
                             data-padding="t:12,12,12,10;r:30;b:12,12,12,10;l:30;"
@@ -92,7 +188,7 @@
     <!-- END REVOLUTION SLIDER -->
 
       <!-- The Problem -->
-    <section class="our-about overflow-hidden">
+    <section id="problem" class="our-about overflow-hidden">
         <div class="container">
             <div class="row flex-column-reverse flex-xl-row">
                 <div class="col-xl-6 pe-xl-4 mt-5 mt-xl-0 wow fadeInUp">
@@ -120,12 +216,11 @@
                             </div>
                             <h5 class="pq-title-hadding">Challenges in Modern Agriculture</h5>
                             <br>
-                            <p class="pq-title-description">Globally, pests and diseases account for an estimated 20-48% reduction in crop yields annually (UN FAO). 
-                                Delayed detection of crop pest and diseases accounts for 47% of crop loss in every farming season across the world.</p>
-                            <p> In Sub-Saharan Africa, specific pests alone cause annual cereal grain losses of about 4.1 million metric tonnes (UNEP). 
-                                Furthermore, 38% of CO2 emissions stem from the excessive use of fertilizers and chemicals, leading to significant soil degradation (UNEP).</p>
-                            {% comment %} <p class="pq-title-description">Smallholder farmers struggle with identifying pest and disease infestations early, often resorting to reactive and heavy chemical applications that damage soil health and increase production costs. 
-                                The lack of affordable, real-time monitoring solutions has left them vulnerable to erratic yields and financial instability.</p> {% endcomment %}
+                            <div class="problem-paragraph">
+                                <p class="pq-title-description mb-4">Globally, pests and diseases account for an estimated 20-48% reduction in crop yields annually. - (UN FAO) Delayed detection of crop pest and diseases accounts for 47% of crop loss in every farming season across the world. 38% CO2 Emission comes from fertilizers, Chemicals & Leading to soil degradation (UNEP)</p>
+                                
+                                <p class="pq-title-description">In Sub-Saharan Africa, certain pests alone cause annual cereal grain losses of about 4.1 million metric tonnes. - (UNEP) We are addressing challenges of delayed pest and disease identification that often lead to loss of yield, use of heavy fertilizers that contribute significantly to CO2 emissions and soil degradation.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,8 +230,60 @@
         </div>
     </section>
 
+    <!-- The Solution -->
+    <section id="solution" class="pq-solution-section pq-py-70 overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <div class="pq-solution-image">
+                        <img src="{% static 'website/image/sentra-device.png' %}" alt="Sentra Device" class="img-fluid solution-device">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5 wow fadeInRight">
+                    <div class="pq-solution-content">
+                        <div class="pq-title">
+                            <div class="pq-title-sub-title">
+                                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="icon">
+                                <span>The Solution</span>
+                            </div>
+                            <h5 class="pq-title-hadding">Innovative <span>Technology</span> for Early Detection</h5>
+                            <div class="solution-box mt-4">
+                                <p class="solution-description">A solar-powered, AI-driven device that detects crop pests, diseases, and nutrient deficiencies in real-time, providing smallholder farmers with actionable SMS alerts and data-driven recommendations for mitigatory action.</p>
+                                
+                                <ul class="pq-list mt-4">
+                                    <li class="pq-list-item">
+                                        <i aria-hidden="true" class="flaticon-next"></i>
+                                        <span class="pq-list-description">98% Detection Accuracy</span>
+                                    </li>
+                                    <li class="pq-list-item">
+                                        <i aria-hidden="true" class="flaticon-next"></i>
+                                        <span class="pq-list-description">Real-time SMS Alerts</span>
+                                    </li>
+                                    <li class="pq-list-item">
+                                        <i aria-hidden="true" class="flaticon-next"></i>
+                                        <span class="pq-list-description">100% Solar-Powered</span>
+                                    </li>
+                                    <li class="pq-list-item">
+                                        <i aria-hidden="true" class="flaticon-next"></i>
+                                        <span class="pq-list-description">AI & Machine Learning Driven</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="pq-btn-container mt-4">
+                                    <a href="#features" class="pq-button pq-button-flat">
+                                        <span class="pq-button-text">Explore Features</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Us -->
-    <section class="our-about overflow-hidden">
+    <section id="about" class="our-about overflow-hidden">
         <div class="container">
             <div class="row flex-xl-row">
                 <div class="col-xl-6 ps-xl-5 wow fadeInLeft">
@@ -149,13 +296,19 @@
                             <h5 class="pq-title-hadding">Empowering Farmers with Early Detection Technology</h5>
                             <br>
                             <p class="pq-title-description">We empower smallholder farmers by putting them ahead by providing early detection of crop pests, diseases, and nutrient deficiencies through our priority solar-powered detection device.</p>
-                            <p class="pq-title-description">We leverage <b>Machine Learning Algorithms, Artificial Intelligence, and Hyperspectral Imaging Technologies</b> to detect crop threats before they manifest. 
-                                We automatically send real-time SMS alerts and actionable recommendations to farmers, helping them mitigate losses and improve productivity.</p>
+                            <p class="pq-title-description">We leverage <b>Machine Learning Algorithms, Artificial Intelligence and hyperspectral imaging technologies</b>, to detect crop pests and diseases before manifestation. We automatically send real-time SMS alerts and actionable recommendations to farmers, helping them mitigate losses and improve productivity.</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="pq-solution-box mt-4">
+                                <h5 class="pq-solution-title">The Solution:</h5>
+                                <p class="pq-solution-description">A solar-powered, AI-driven device that detects crop pests, diseases, and nutrient deficiencies in real-time, providing smallholder farmers with actionable SMS alerts and data-driven recommendations for mitigatory action.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mt-4">
                             <div class="pq-icon-box pq-style-1">
                                 <div class="pq-icon-box-icon">
                                     <i aria-hidden="true" class="flaticon-sprout"></i>
@@ -166,7 +319,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 mt-4 mt-sm-0">
+                        <div class="col-sm-6 mt-4">
                             <div class="pq-icon-box pq-style-1">
                                 <div class="pq-icon-box-icon">
                                     <i aria-hidden="true" class="flaticon-ecologist"></i>
@@ -179,12 +332,7 @@
 
                         <div class="pq-about-contact">
                             <span>Have Questions?</span>
-                            <h4 class="pq-about-contact-title"><a href="#">+250791704244</a></h4>
-                        </div>
-
-                        <div class="pq-btn-container mt-5">
-                            <a href="about-us.html" class="pq-button pq-button-flat">
-                                <span class="pq-button-text">read more</span>                             </a>
+                            <h4 class="pq-about-contact-title"><a href="tel:+250791704244">+250791704244</a></h4>
                         </div>
                     </div>
                 </div>
@@ -210,7 +358,7 @@
     </section>
 
     <!-- Our Services -->
-    <section class="our-service pq-bg-gray overflow-hidden pq-bg-expand">
+    <section id="features" class="our-service pq-bg-gray overflow-hidden pq-bg-expand">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -225,70 +373,150 @@
                     </div>
                 </div>
 
-                <div class="pq-service-box-2-items pq-hover-active wow fadeInUp">
-                    <div class="pq-service-box pq-style-1 pq-hover-item pq-active">
-                        <div class="pq-service-box-icon">
-                            <i class=" flaticon-planting-1" aria-hidden="true"></i>
-                        </div>
-                        <div class="pq-service-box-content">
-                            <div class="pq-image-border">
-                                <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-1.png' %}"
-                                    alt="service-image">
+                <div class="pq-service-box-container wow fadeInUp">
+                    <div class="row">
+                        <!-- Service Card 1 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-planting-1" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-1.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Real-Time Pest and Disease Detection</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">Our AI-powered device identifies crop pests, diseases, and nutrient deficiencies with <strong>98% accuracy</strong>, providing timely alerts for intervention.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="pq-service-box-title">Real-Time Pest and Disease Detection</h5>
-                            <p class="pq-service-box-description">Our AI-powered device identifies crop pests, diseases, and nutrient deficiencies with **98% accuracy**, providing timely alerts for intervention.</p>
                         </div>
-                    </div>
-                    <div class="pq-service-box pq-style-1 pq-hover-item">
-                        <div class="pq-service-box-icon">
-                            <i class=" flaticon-shovel" aria-hidden="true"></i>
-                        </div>
-                        <div class="pq-service-box-content">
-                            <div class="pq-image-border">
-                                <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-2.png' %}"
-                                    alt="service-image">
+
+                        <!-- Service Card 2 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-shovel" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-2.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Smart Data Dashboard</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">All collected farm data is transmitted to our <strong>dashboard</strong>, offering insights and trends to improve farm management and productivity.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="pq-service-box-title">Smart Data Dashboard</h5>
-                            <p class="pq-service-box-description">All collected farm data is transmitted to our **dashboard**, offering insights and trends to improve farm management and productivity.</p>
                         </div>
-                    </div>
-                    <div class="pq-service-box pq-style-1 pq-hover-item">
-                        <div class="pq-service-box-icon">
-                            <i class=" flaticon-corn" aria-hidden="true"></i>
-                        </div>
-                        <div class="pq-service-box-content">
-                            <div class="pq-image-border">
-                                <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-3.png' %}"
-                                    alt="service-image">
+
+                        <!-- Service Card 3 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-corn" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-3.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Sustainable Farming Solutions</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">By reducing chemical use and optimizing fertilizer application, our technology helps <strong>restore soil health</strong> and cut <strong>CO2 emissions</strong>.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="pq-service-box-title">Sustainable Farming Solutions</h5>
-                            <p class="pq-service-box-description">By reducing chemical use and optimizing fertilizer application, our technology helps **restore soil health** and cut **CO2 emissions**.</p>
                         </div>
-                    </div>
-                    <div class="pq-service-box pq-style-1 pq-hover-item">
-                        <div class="pq-service-box-icon">
-                            <i class=" flaticon-tractor-3" aria-hidden="true"></i>
-                        </div>
-                        <div class="pq-service-box-content">
-                            <div class="pq-image-border">
-                                <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-4.png' %}"
-                                    alt="service-image">
+
+                        <!-- Service Card 4 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-tractor-3" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-4.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Off-Grid Functionality</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">Our <strong>100% solar-powered</strong> system ensures continuous monitoring and data collection, even in remote areas without electricity.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="pq-service-box-title">Off-Grid Functionality</h5>
-                            <p class="pq-service-box-description">Our **100% solar-powered** system ensures continuous monitoring and data collection, even in remote areas without electricity.</p>
                         </div>
-                    </div>
-                    <div class="pq-service-box pq-style-1 pq-hover-item">
-                        <div class="pq-service-box-icon">
-                            <i class=" flaticon-land" aria-hidden="true"></i>
-                        </div>
-                        <div class="pq-service-box-content">
-                            <div class="pq-image-border">
-                                <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-5.png' %}"
-                                    alt="service-image">
+
+                        <!-- Service Card 5 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-land" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-5.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Actionable SMS Alerts</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">Farmers receive <strong>instant SMS alerts</strong> with customized recommendations to take the right actions before damage escalates.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h5 class="pq-service-box-title">Actionable SMS Alerts</h5>
-                            <p class="pq-service-box-description">Farmers receive **instant SMS alerts** with customized recommendations to take the right actions before damage escalates.</p>
+                        </div>
+
+                        <!-- Service Card 6 -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="pq-service-card pq-hover-item">
+                                <div class="card-inner">
+                                    <div class="card-front">
+                                        <div class="pq-service-box-icon">
+                                            <i class="flaticon-sprout" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pq-image-border">
+                                            <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-1.png' %}"
+                                                alt="service-image">
+                                        </div>
+                                        <h5 class="pq-service-box-title">Farm Data Analytics</h5>
+                                    </div>
+                                    <div class="card-back">
+                                        <p class="pq-service-box-description">Access <strong>comprehensive analysis</strong> of farm conditions and crop health trends to make informed farming decisions.</p>
+                                        <div class="service-indicator">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -297,8 +525,213 @@
                 <img class="pq-7-bg-image" src="{% static 'website/image/service/services-bottom-image.png' %}" alt="bg-image">
             </div>
         </div>
-    </section>
 
+        <!-- Add CSS for enhanced service cards -->
+        <style>
+            /* Enhanced Service Cards Styling */
+            .pq-service-card {
+                position: relative;
+                height: 100%;
+                min-height: 350px;
+                perspective: 1000px;
+                cursor: pointer;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transform-style: preserve-3d;
+            }
+            
+            .pq-service-card:hover .card-inner {
+                transform: rotateY(180deg);
+            }
+            
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 30px 25px;
+                border-radius: 12px;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .card-front {
+                background-color: #fff;
+                background-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(246,246,246,0.8) 100%);
+                border-left: 4px solid #6b8e23;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                z-index: 2;
+            }
+            
+            .card-back {
+                background: linear-gradient(135deg, rgba(107,142,35,0.95) 0%, rgba(107,142,35,0.85) 100%);
+                color: white;
+                transform: rotateY(180deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .pq-service-box-icon {
+                font-size: 3.5rem;
+                color: #6b8e23;
+                margin-bottom: 20px;
+                transition: all 0.5s ease;
+            }
+            
+            .pq-service-card:hover .pq-service-box-icon {
+                transform: scale(1.1);
+            }
+            
+            .pq-image-border {
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+                margin: 10px 0 20px;
+                width: 100%;
+                max-width: 150px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .pq-image-1 {
+                width: 100%;
+                height: auto;
+                transition: transform 0.5s ease;
+            }
+            
+            .pq-service-card:hover .pq-image-1 {
+                transform: scale(1.1);
+            }
+            
+            .pq-service-box-title {
+                color: #333;
+                font-size: 1.3rem;
+                margin: 15px 0;
+                font-weight: 600;
+                position: relative;
+            }
+            
+            .card-back .pq-service-box-description {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            
+            .card-back .pq-service-box-description strong {
+                color: #fff;
+                font-weight: 700;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            }
+            
+            /* Animated indicator dots */
+            .service-indicator {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 15px;
+            }
+            
+            .service-indicator span {
+                width: 8px;
+                height: 8px;
+                margin: 0 5px;
+                border-radius: 50%;
+                background-color: rgba(255,255,255,0.6);
+                opacity: 0.7;
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+            
+            .service-indicator span:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+            
+            .service-indicator span:nth-child(3) {
+                animation-delay: 1s;
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(0.8); opacity: 0.5; }
+                50% { transform: scale(1.2); opacity: 1; }
+                100% { transform: scale(0.8); opacity: 0.5; }
+            }
+            
+            /* Media queries for responsive design */
+            @media (max-width: 991px) {
+                .pq-service-card {
+                    min-height: 300px;
+                }
+            }
+            
+            @media (max-width: 767px) {
+                .pq-service-card {
+                    min-height: 280px;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+    
+        <!-- Add JavaScript for enhanced animations -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize service cards with staggered animations
+                const serviceCards = document.querySelectorAll('.pq-service-card');
+                
+                serviceCards.forEach((card, index) => {
+                    // Add staggered entrance animation
+                    setTimeout(() => {
+                        card.classList.add('animated-in');
+                    }, index * 150);
+                    
+                    // Add hover listeners for smooth transition
+                    card.addEventListener('mouseenter', function() {
+                        this.classList.add('hover-active');
+                        
+                        // Find siblings and reduce their opacity for focus effect
+                        serviceCards.forEach(sibling => {
+                            if (sibling !== card) {
+                                sibling.style.opacity = '0.8';
+                                sibling.style.transform = 'scale(0.98)';
+                            }
+                        });
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.classList.remove('hover-active');
+                        
+                        // Reset siblings
+                        serviceCards.forEach(sibling => {
+                            sibling.style.opacity = '1';
+                            sibling.style.transform = 'scale(1)';
+                        });
+                    });
+                });
+                
+                // Add smooth scroll for navigation
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
+        </script>
+    </section>
 
        <!-- Image Section - Our Impact in Action -->
        <section class="image-box gallery pb-0">
@@ -381,7 +814,7 @@
 
 
     <!-- Counter - SDG Impact -->
-<section class="counter overflow-hidden pt-5">
+<section id="impact" class="counter overflow-hidden pt-5">
     <div class="container">
         <div class="row">
             <!-- SDG 1 - No Poverty -->
@@ -684,7 +1117,7 @@
 
 
     <!-- Meet the Team -->
-<section class="team pq-bg-gray overflow-hidden pq-bg-expand">
+<section id="team" class="team pq-bg-gray overflow-hidden pq-bg-expand">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -794,7 +1227,7 @@
 </section>
 
   <!-- Sentra's Vision -->
-<section class="appointment pq-bg-3-image pq-py-90 pq-bg-expand">
+<section id="contact" class="appointment pq-bg-3-image pq-py-90 pq-bg-expand">
     <div class="container">
         <div class="pq-icon-box-item">
             <div class="pq-icon-box pq-style-5">
