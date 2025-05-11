@@ -11,6 +11,9 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smartel.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "smartel.settings")
 
 application = get_wsgi_application()
+
+# This is needed for Vercel deployment
+app = application
