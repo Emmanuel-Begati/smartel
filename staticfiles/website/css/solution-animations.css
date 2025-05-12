@@ -257,3 +257,18 @@
 .card:hover::after {
     top: 0;
 }
+
+/* Mobile-friendly solution cards */
+@media (max-width: 767px) {
+    .pq-hover-item,
+    .feature-card,
+    .process-step {
+        margin: 0 10px 20px;
+        padding: 15px;
+    }
+    .pq-service-box-title,
+    .feature-card .feature-icon,
+    .process-step .step-icon {
+        font-size: 1.2rem;
+    }
+}

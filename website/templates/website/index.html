@@ -124,6 +124,74 @@
         }
     </style>
 
+    <!-- Increase image sizes in Problem & About sections -->
+    <style>
+        #problem .pq-about-media img,
+        #problem .pq-image-border img,
+        #about .pq-about-media img,
+        #about .pq-image-border img {
+            width: 110% !important; /* Increased width to make images wider */
+            height: auto !important;
+            object-fit: cover;
+            min-height: 520px !important; /* Increased height for much larger images */
+            transform: translateX(-5%); /* Center the wider image */
+        }
+        
+        #problem .pq-about-media,
+        #about .pq-about-media {
+            max-width: 105%; /* Allow container to be slightly wider */
+            padding: 0;
+            overflow: hidden; /* Prevent horizontal scrollbar */
+        }
+        
+        #problem .pq-image-border,
+        #about .pq-image-border {
+            margin: 15px 5px; /* Reduced horizontal margin */
+            max-height: none;
+            width: 105%; /* Make container wider */
+        }
+        
+        /* Make the image container larger */
+        #problem .col-md-6,
+        #about .col-md-6 {
+            padding: 0 5px; /* Further reduce padding to allow more space for images */
+        }
+        
+        /* Make the image columns take more space */
+        #problem .row,
+        #about .row {
+            margin: 0 -5px; /* Negative margin to expand the row */
+        }
+    </style>
+    <!-- Mobile-responsive adjustments -->
+    <style>
+        /* Hide second image columns in Problem and About sections on small screens */
+        @media (max-width: 767px) {
+            #problem .pq-about-media .col-md-6:nth-child(2),
+            #about .pq-about-media .col-md-6:nth-child(2) {
+                display: none !important;
+            }
+            /* Tighter padding and smaller text */
+            #problem .container,
+            #about .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .problem-paragraph p,
+            #about .pq-title-description {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+            /* Center remaining image */
+            #problem .pq-image-1,
+            #about .pq-image-1 {
+                margin: 0 auto 20px;
+                display: block;
+            }
+        }
+    </style>
+
     <!-- banner --> 
     <div class="banner py-0">
         <!-- START Home 1 REVOLUTION SLIDER 6.6.18 -->
@@ -153,9 +221,9 @@
                             data-frame_999="o:0;st:w;sR:7000;"
                             style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;color:var(--dark-color);text-shadow:1px 1px 3px rgba(255,255,255,0.5);">
                             Early Crop Pest And<br />
-                            <span style="color:var(--primary-color);font-weight:700;text-shadow:1px 1px 3px rgba(255,255,255,0.7);">Disease</span> Detection Technology
+                            <span style="color:var(--primary-color);font-weight:700; ">Disease</span> Detection Technology
                             <h5 class="pq-title-hadding" id='title-text' style="color: var(--dark-color); text-shadow: 1px 1px 4px rgba(255,255,255,0.7);">Future-Proofing Our Food Systems, One Farm at a Time.<br> 
-                                <span style="color: var(--secondary-color); font-weight: 600; text-shadow: 1px 1px 3px rgba(255,255,255,0.7);">-</span></h5>
+                                <span style="color: var(--secondary-color); font-weight: 600; text-shadow: 1px 1px 3px rgba(255,255,255,0.7);"></span></h5>
                         </rs-layer>
     
                         <a id="slider-8-slide-31-layer-2" class="rs-layer rev-btn"
@@ -192,7 +260,7 @@
                             data-frame_999="o:0;st:w;sR:7000;"
                             style="z-index:6;font-family:'ClashDisplay';text-transform:capitalize;color:var(--dark-color);text-shadow:1px 1px 3px rgba(255,255,255,0.5);">
                             Democratizing AI<br />
-                            <span style="color:var(--primary-color);font-weight:700;text-shadow:1px 1px 3px rgba(255,255,255,0.7);">for Climate</span> Resilience
+                            <span style="color:var(--primary-color);font-weight:700; ">for Climate</span> Resilience
                             
                         </rs-layer>
     
@@ -366,9 +434,9 @@
                         <div class="pq-title">
                             <div class="pq-title-sub-title justify-content-center">
                                 <img src="{% static 'website/image/section-image/group_new.png' %}" alt="image">
-                                <span>Our Services</span>
+                                <span>Powerful Features for Modern Farming</span>
                             </div>
-                            <h5 class="pq-title-hadding">What We Offer <span>For Farmers</span></h5>
+                            <h5 class="pq-title-hadding">Agrisat uses advanced AI to provide . <span>actionable insights from satellite imagery for your farm</span></h5>
                         </div>
                     </div>
                 </div>
@@ -387,10 +455,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-1.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Real-Time Pest and Disease Detection</h5>
+                                        <h5 class="pq-service-box-title">Crop Health Monitoring</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">Our AI-powered device identifies crop pests, diseases, and nutrient deficiencies with <strong>98% accuracy</strong>, providing timely alerts for intervention.</p>
+                                        <p class="pq-service-box-description">Track NDVI, chlorophyll index, and stress indicators with Sentinel-2 and Landsat imagery.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -411,10 +479,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-2.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Smart Data Dashboard</h5>
+                                        <h5 class="pq-service-box-title">Yield Prediction</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">All collected farm data is transmitted to our <strong>dashboard</strong>, offering insights and trends to improve farm management and productivity.</p>
+                                        <p class="pq-service-box-description">AI-powered yield forecasting based on historical data, current crop health, and environmental factors.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -435,10 +503,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-3.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Sustainable Farming Solutions</h5>
+                                        <h5 class="pq-service-box-title">Pest & Disease Detection</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">By reducing chemical use and optimizing fertilizer application, our technology helps <strong>restore soil health</strong> and cut <strong>CO2 emissions</strong>.</p>
+                                        <p class="pq-service-box-description">Early warning system for pest infestations and disease outbreaks using thermal and multispectral analysis.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -459,10 +527,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-4.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Off-Grid Functionality</h5>
+                                        <h5 class="pq-service-box-title">Weather Integration</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">Our <strong>100% solar-powered</strong> system ensures continuous monitoring and data collection, even in remote areas without electricity.</p>
+                                        <p class="pq-service-box-description">Combine satellite data with weather forecasts to predict drought risks and optimal irrigation timing.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -483,10 +551,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-5.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Actionable SMS Alerts</h5>
+                                        <h5 class="pq-service-box-title">Automated Recommendations</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">Farmers receive <strong>instant SMS alerts</strong> with customized recommendations to take the right actions before damage escalates.</p>
+                                        <p class="pq-service-box-description">Receive AI-generated recommendations for irrigation, fertilization, and pest management via SMS or WhatsApp.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -507,10 +575,10 @@
                                             <img class="pq-image-1" src="{% static 'website/image/service/style-1/service-img-1.png' %}"
                                                 alt="service-image">
                                         </div>
-                                        <h5 class="pq-service-box-title">Farm Data Analytics</h5>
+                                        <h5 class="pq-service-box-title">Multi-Farm Management</h5>
                                     </div>
                                     <div class="card-back">
-                                        <p class="pq-service-box-description">Access <strong>comprehensive analysis</strong> of farm conditions and crop health trends to make informed farming decisions.</p>
+                                        <p class="pq-service-box-description">Monitor multiple farms and fields from a single dashboard with detailed analytics for each location.</p>
                                         <div class="service-indicator">
                                             <span></span><span></span><span></span>
                                         </div>
@@ -733,84 +801,79 @@
         </script>
     </section>
 
-       <!-- Image Section - Our Impact in Action -->
-       <section class="image-box gallery pb-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="pq-section-title text-start pe-2 wow fadeInRight">
-                        <div class="pq-title">
-                            <div class="pq-title-sub-title">
-                                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="image">
-                                <span>Our Impact in Action</span>
-                            </div>
-                            <h5 class="pq-title-hadding">Transforming Agriculture Through <span>Technology</span></h5>
-                        </div>
+       <!-- How Sentra Works -->
+        <section id="how-sentra-works" class="how-sentra-works py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title">How Sentra Works</h2>
                     </div>
                 </div>
-
-                <div class="col-lg-7">
-                    <div class="pq-image-box-item wow fadeInRight">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="pq-image-box pq-style-1">
-                                    <a href="{% static 'website/image/image-box/Project-image-8.png' %}">
-                                        <img src="{% static 'website/image/image-box/Project-image-8.png' %}" alt="Real-time Pest Detection">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <div class="pq-image-box pq-style-1">
-                                    <a href="{% static 'website/image/image-box/Project-image-6.png' %}">
-                                        <img src="{% static 'website/image/image-box/Project-image-6.png' %}" alt="Sustainable Farming Practices">
-                                    </a>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="work-step p-4 text-center">
+                            <div class="step-icon mb-3"><i class="flaticon-data"></i></div>
+                            <h4>1. Data Collection</h4>
+                            <p>We gather crop imagery from our camera, integrated with our device and mounted on the farm.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="work-step p-4 text-center">
+                            <div class="step-icon mb-3"><i class="flaticon-ai"></i></div>
+                            <h4>2. AI Analysis</h4>
+                            <p>Our machine learning models analyze the data to detect crop health issues, predict yields, and identify potential risks.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="work-step p-4 text-center">
+                            <div class="step-icon mb-3"><i class="flaticon-insights"></i></div>
+                            <h4>3. Actionable Insights</h4>
+                            <p>Receive personalized recommendations and alerts through our web platform, mobile app, or SMS notifications.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row align-items-center mt-lg-5 mt-4">
-                <div class="col-lg-7">
-                    <div class="pq-image-box-item wow fadeInRight">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="pq-image-box pq-style-1">
-                                    <a href="{% static 'website/image/image-box/Project-image-7.png' %}">
-                                        <img src="{% static 'website/image/image-box/Project-image-7.png' %}" alt="Climate-Smart Agriculture">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <div class="pq-image-box pq-style-1">
-                                    <a href="{% static 'website/image/image-box/Project-image-2-1.png' %}">
-                                        <div class="pq-image-border">
-                                            <img class="pq-image-1" src="{% static 'website/image/image-box/Project-image-2-1.png' %}"
-                                                alt="Farmer Training & Support">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-5 mt-4 mt-lg-0 pq-moving-start">
-                    <div class="pq-popup-animation pq-style-1 pq-moving-button wow fadeInRight">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?v=XHOmBV4js_E">
-                            <div class="pq-popup-inner">
-                                <div class="pq-popup-content">
-                                    <i class=" ti-arrow-top-right"></i>
-                                </div>
-                                <img src="{% static 'website/image/popup/popup-animation.png' %}" alt="Sentra in Action">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <style>
+                .how-sentra-works .section-title {
+                    font-size: 32px;
+                    color: #6b8e23;
+                    margin-bottom: 20px;
+                    position: relative;
+                }
+                .how-sentra-works .section-title::after {
+                    content: '';
+                    width: 60px;
+                    height: 4px;
+                    background: #6b8e23;
+                    display: block;
+                    margin: 10px auto 0;
+                }
+                .how-sentra-works .work-step {
+                    border: 1px solid #e2e2e2;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    background: #fff;
+                }
+                .how-sentra-works .work-step:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                }
+                .how-sentra-works .step-icon {
+                    font-size: 40px;
+                    color: #6b8e23;
+                }
+                .how-sentra-works h4 {
+                    color: #333;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                .how-sentra-works p {
+                    color: #555;
+                    font-size: 16px;
+                }
+            </style>
+        </section>
+        <!-- Sentra's Vision -->
 
 
     <!-- Counter - SDG Impact -->
@@ -822,7 +885,7 @@
                 <div class="pq-counter pq-counter-style-1 wow fadeInUp">
                     <div class="pq-counter-info">
                         <div class="pq-counter-num-prefix">
-                            <h5 class="pq-count timer" data-count="44" data-pq-duration="2000">44</h5>
+                            <h5 class="pq-count timer" data-count="44" data-pq-duration="2000">0</h5>
                             <span class="pq-counter-prefix">%</span>
                         </div>
                         <p class="pq-counter-description">Increase in farm yields</p>
@@ -854,7 +917,7 @@
                 <div class="pq-counter pq-counter-style-1 wow fadeInUp">
                     <div class="pq-counter-info">
                         <div class="pq-counter-num-prefix">
-                            <h5 class="pq-count timer" data-count="2" data-pq-duration="2000">2</h5>
+                            <h5 class="pq-count timer" data-count="2" data-pq-duration="2000">1.2</h5>
                             <span class="pq-counter-prefix">T</span>
                         </div>
                         <p class="pq-counter-description">CO₂ reduced per device annually</p>
@@ -983,81 +1046,57 @@
             </div>
         </div>
         
-        <!-- Impact Metrics Carousel -->
+        <!-- Impact Metrics Section -->
         <div class="row mb-5">
             <div class="col-lg-12">
-                <div class="pq-process-step-slider style-2 wow fadeInUp">
-                    <div class="owl-carousel" data-dots="true" data-nav="false" data-desk_num="4" data-lap_num="3"
-                        data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true"
-                        data-margin="30">
-
-                        <!-- Impact Item 1 -->
-                        <div class="item">
-                            <div class="pq-process-step style-2 h-100 p-4">
-                                <h3 class="pq-process-year">44%</h3>
-                                <div class="pq-timeline-line"></div>
-                                <div class="pq-process-content">
-                                    <h5 class="pq-process-title">Increase in Crop Yields</h5>
-                                    <p class="pq-process-description">
-                                        Farmers using Sentra's precision monitoring reported a <strong>44% boost in productivity</strong>, reducing losses from pests and diseases.
-                                    </p>
-                                </div>
+                <div class="row">
+                    <!-- Impact Item 1 -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="pq-process-step style-2 h-100 p-4 wow fadeInUp">
+                            <div class="pq-counter-num-prefix">
+                                <h3 class="pq-count timer" data-count="44" data-pq-duration="2000">0</h3>
+                                <span class="pq-counter-prefix">%</span>
+                            </div>
+                            <div class="pq-timeline-line"></div>
+                            <div class="pq-process-content">
+                                <h5 class="pq-process-title">Increase in Crop Yields</h5>
+                                <p class="pq-process-description">
+                                    Farmers using Sentra's precision monitoring reported a <strong>44% boost in productivity</strong>, reducing losses from pests and diseases.
+                                </p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Impact Item 2 -->
-                        <div class="item">
-                            <div class="pq-process-step style-2 h-100 p-4">
-                                <h3 class="pq-process-year">2T</h3>
-                                <div class="pq-timeline-line"></div>
-                                <div class="pq-process-content">
-                                    <h5 class="pq-process-title">CO₂ Emissions Prevented</h5>
-                                    <p class="pq-process-description">
-                                        Each Sentra device reduces <strong>2 tonnes of carbon emissions per year</strong> by minimizing fertilizer overuse and improving resource efficiency.
-                                    </p>
-                                </div>
+                    <!-- Impact Item 2 -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="pq-process-step style-2 h-100 p-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="pq-counter-num-prefix">
+                                <h3 class="pq-count timer" data-count="2" data-pq-duration="2000">0</h3>
+                                <span class="pq-counter-prefix">T</span>
+                            </div>
+                            <div class="pq-timeline-line"></div>
+                            <div class="pq-process-content">
+                                <h5 class="pq-process-title">CO₂ Emissions Prevented</h5>
+                                <p class="pq-process-description">
+                                    Each Sentra device reduces <strong>2 tonnes of carbon emissions per year</strong> by minimizing fertilizer overuse and improving resource efficiency.
+                                </p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Impact Item 3 -->
-                        <div class="item">
-                            <div class="pq-process-step style-2 h-100 p-4">
-                                <h3 class="pq-process-year">1,000+</h3>
-                                <div class="pq-timeline-line"></div>
-                                <div class="pq-process-content">
-                                    <h5 class="pq-process-title">Farmers Empowered</h5>
-                                    <p class="pq-process-description">
-                                        More than <strong>1,000 smallholder farmers</strong> have benefited from real-time farm insights, leading to better decision-making and improved food security.
-                                    </p>
-                                </div>
+                    <!-- Impact Item 3 -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="pq-process-step style-2 h-100 p-4 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="pq-counter-num-prefix">
+                                <h3 class="pq-count timer" data-count="1000" data-pq-duration="2000">0</h3>
+                                <span class="pq-counter-prefix">+</span>
                             </div>
-                        </div>
-
-                        <!-- Impact Item 4 -->
-                        <div class="item">
-                            <div class="pq-process-step style-2 h-100 p-4">
-                                <h3 class="pq-process-year">0.5 Ha</h3>
-                                <div class="pq-timeline-line"></div>
-                                <div class="pq-process-content">
-                                    <h5 class="pq-process-title">Soil Restoration Per Farm</h5>
-                                    <p class="pq-process-description">
-                                        Sentra's AI-driven insights contribute to <strong>restoring 0.5 hectares of degraded land per farm</strong>, ensuring long-term sustainability.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Impact Item 5 -->
-                        <div class="item">
-                            <div class="pq-process-step style-2 h-100 p-4">
-                                <h3 class="pq-process-year">Scaling</h3>
-                                <div class="pq-timeline-line"></div>
-                                <div class="pq-process-content">
-                                    <h5 class="pq-process-title">Expanding Across Africa</h5>
-                                    <p class="pq-process-description">
-                                        Sentra is on track to scale across <strong>multiple African regions</strong>, deploying <strong>AI-powered monitoring solutions to millions of farmers</strong>.
-                                    </p>
-                                </div>
+                            <div class="pq-timeline-line"></div>
+                            <div class="pq-process-content">
+                                <h5 class="pq-process-title">Farmers Empowered</h5>
+                                <p class="pq-process-description">
+                                    More than <strong>1,000 smallholder farmers</strong> have benefited from real-time farm insights, leading to better decision-making and improved food security.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1116,116 +1155,6 @@
 </section>
 
 
-    <!-- Meet the Team -->
-<section id="team" class="team pq-bg-gray overflow-hidden pq-bg-expand">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="pq-section-title text-center wow fadeInUp">
-                    <div class="pq-title">
-                        <div class="pq-title-sub-title justify-content-center">
-                            <img src="{% static 'website/image/section-image/group_new.png' %}" alt="image">
-                            <span>Meet the Team</span>
-                        </div>
-                        <h5 class="pq-title-hadding">The <span>Innovators</span> Behind Sentra</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-            <div class="pq-team-slider-1 center-owl-carousel wow fadeInUp">
-                <div class="owl-carousel" data-dots="false" data-nav="true" data-desk_num="3" data-lap_num="3"
-                    data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="false" data-loop="true"
-                    data-center="true" data-margin="60">
-
-                    <!-- CEO -->
-                    <div class="item">
-                        <div class="pq-team pq-style-1">
-                            <div class="pq-team-img">
-                                <img src="{% static 'website/image/team/style-1/team-img-1.png' %}" alt="team-image">
-                                <div class="pq-team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="pq-team-info">
-                                <a>
-                                    <h5 class="pq-member-name">Smart Israel</h5>
-                                </a>
-                                <span class="pq-member-designation">CEO & AI Engineer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CMO -->
-                    <div class="item">
-                        <div class="pq-team pq-style-1">
-                            <div class="pq-team-img">
-                                <img src="{% static 'website/image/team/style-1/team-img-2.png' %}" alt="team-image">
-                                <div class="pq-team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="pq-team-info">
-                                <a>
-                                    <h5 class="pq-member-name">Sebrina Osman</h5>
-                                </a>
-                                <span class="pq-member-designation">Chief Marketing Officer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CTO -->
-                    <div class="item">
-                        <div class="pq-team pq-style-1">
-                            <div class="pq-team-img">
-                                <img src="{% static 'website/image/team/style-1/team-img-3.png' %}" alt="team-image">
-                                <div class="pq-team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="pq-team-info">
-                                <a>
-                                    <h5 class="pq-member-name">Lilala Runiga</h5>
-                                </a>
-                                <span class="pq-member-designation">CTO & AI Researcher</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CFO -->
-                    <div class="item">
-                        <div class="pq-team pq-style-1">
-                            <div class="pq-team-img">
-                                <img src="{% static 'website/image/team/style-1/team-img-4.png' %}" alt="team-image">
-                                <div class="pq-team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="pq-team-info">
-                                <a>
-                                    <h5 class="pq-member-name">Nicole Irakoze</h5>
-                                </a>
-                                <span class="pq-member-designation">Chief Financial Officer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
   <!-- Sentra's Vision -->
 <section id="contact" class="appointment pq-bg-3-image pq-py-90 pq-bg-expand">
     <div class="container">
@@ -1257,5 +1186,52 @@
 
     <!-- Include enhanced sections script -->
     <script src="{% static 'website/js/enhanced-sections.js' %}"></script>
+    
+    <!-- Additional Mobile Optimizations -->
+    <style>
+    @media (max-width: 767px) {
+        /* Stack solution section columns full-width and center text */
+        #solution .col-lg-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #solution .pq-section-title {
+            text-align: center;
+        }
+        /* Features section: one service card per row */
+        .pq-service-box-container .row > div {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        /* How Sentra Works: full-width steps */
+        #how-sentra-works .col-md-4 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 15px;
+        }
+        /* Contact button centering */
+        #contact .pq-btn-container {
+            text-align: center;
+        }
+    }
+    </style>
+    
+    <!-- Collapse navbar on mobile after link click -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navLinks = document.querySelectorAll('.navbar-collapse a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var collapseEl = document.querySelector('.navbar-collapse');
+                if (collapseEl.classList.contains('show')) {
+                    new bootstrap.Collapse(collapseEl).hide();
+                }
+            });
+        });
+    });
+    </script>
     {% endblock %}
 

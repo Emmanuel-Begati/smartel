@@ -1314,7 +1314,7 @@ select.form-control {
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
-    color: var(--dark-color);
+    color: var (--dark-color);
     display: inline-block;
     padding: 20px;
     position: relative;
@@ -1568,7 +1568,7 @@ blockquote strong {
 
 .owl-carousel .owl-nav button:hover {
     color: var(--white-color);
-    background: var(--dark-color);
+    background: var (--dark-color);
 }
 
 .pq-dark-bg .owl-carousel .owl-nav button:hover {
@@ -1957,7 +1957,7 @@ blockquote strong {
 }
 
 #pq-header .navbar-brand img {
-    height: 55px;
+    height: 80px;
 }
 
 @media (max-width: 379px) {
@@ -7297,5 +7297,47 @@ img {
 @media (max-width: 480px) {
     .pq-image-1, .pq-image-2 {
         min-height: 200px;
+    }
+}
+
+/* Responsive enhancements for mobile devices */
+@media (max-width: 767px) {
+    /* Layout adjustments */
+    .container { padding: 0 15px; }
+    #header, .navbar { display: flex; flex-direction: column; align-items: flex-start; }
+    .menu a, .menu-link { display: block; padding: 10px 0; }
+
+    /* Typography scaling */
+    body { font-size: 16px; line-height: 1.5; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+
+    /* Content blocks full width */
+    .pq-about-media,
+    .enhanced-image-layout .row,
+    .feature-card,
+    .pq-hover-item,
+    .card {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    /* Images fluid */
+    img,
+    .pq-image-1,
+    .pq-image-2,
+    .pq-image-border img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* CTA and footer adjustments */
+    .cta-box { padding: 20px; text-align: center; }
+    #pq-footer { padding: 20px; text-align: center; }
+
+    /* Solution section cards stacking */
+    .pq-solution-section .feature-card {
+        width: 100%;
     }
 }
