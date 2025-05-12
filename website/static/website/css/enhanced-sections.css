@@ -120,19 +120,7 @@
 /* Problem section specific styling */
 .problem-paragraph p {
     position: relative;
-    padding-left: 20px;
     margin-bottom: 15px;
-}
-
-.problem-paragraph p:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 8px;
-    height: 8px;
-    background-color: #6b8e23;
-    border-radius: 50%;
 }
 
 /* Improved responsive design */
