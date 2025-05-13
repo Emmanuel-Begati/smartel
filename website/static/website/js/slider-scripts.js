@@ -1,62 +1,110 @@
 /**
- * Custom JavaScript for Smartel's HTML Slider
- * Provides basic slider functionality without Revolution Slider dependencies
+ * Optimized JavaScript for Smartel's HTML Slider
+ * Performance-enhanced version that reduces runtime overhead
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the slider
-    const slider = {
-        slides: document.querySelectorAll('.smartel-slide'),
-        currentSlide: 0,
-        slideCount: document.querySelectorAll('.smartel-slide').length,
-        autoSlideInterval: null,
+// Use requestIdleCallback or setTimeout for non-critical initialization
+(function() {
+    // Wait for DOM to be interactive before setting up slider
+    const setupSlider = function() {
+        // Cache DOM elements to avoid repeated queries
+        const slides = document.querySelectorAll('.smartel-slide');
+        const sliderContainer = document.querySelector('.smartel-slider');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
         
-        init: function() {
-            // Set first slide as active
-            this.slides[0].classList.add('active');
-            
-            // Setup navigation
-            document.getElementById('slider-prev').addEventListener('click', () => this.prevSlide());
-            document.getElementById('slider-next').addEventListener('click', () => this.nextSlide());
-            
-            // Start auto-slide
-            this.startAutoSlide();
-            
-            // Pause auto-slide on hover
-            const sliderContainer = document.querySelector('.smartel-slider');
-            sliderContainer.addEventListener('mouseenter', () => this.stopAutoSlide());
-            sliderContainer.addEventListener('mouseleave', () => this.startAutoSlide());
-        },
+        // Don't initialize if elements aren't found
+        if (!slides.length || !sliderContainer || !prevBtn || !nextBtn) return;
         
-        // Navigate to next slide
-        nextSlide: function() {
-            this.slides[this.currentSlide].classList.remove('active');
-            this.currentSlide = (this.currentSlide + 1) % this.slideCount;
-            this.slides[this.currentSlide].classList.add('active');
-        },
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        let autoSlideInterval = null;
+        let isVisible = true;
         
-        // Navigate to previous slide
-        prevSlide: function() {
-            this.slides[this.currentSlide].classList.remove('active');
-            this.currentSlide = (this.currentSlide - 1 + this.slideCount) % this.slideCount;
-            this.slides[this.currentSlide].classList.add('active');
-        },
-        
-        // Auto-slide functionality
-        startAutoSlide: function() {
-            this.stopAutoSlide();
-            this.autoSlideInterval = setInterval(() => this.nextSlide(), 7000); // Change slide every 7 seconds
-        },
-        
-        stopAutoSlide: function() {
-            if (this.autoSlideInterval) {
-                clearInterval(this.autoSlideInterval);
+        // Use Page Visibility API to pause when tab not active
+        document.addEventListener('visibilitychange', function() {
+            isVisible = document.visibilityState === 'visible';
+            if (isVisible) {
+                startAutoSlide();
+            } else {
+                stopAutoSlide();
             }
+        });
+        
+        // Use more efficient event binding
+        const nextSlide = function() {
+            if (slideCount <= 1) return; // Don't animate if only one slide
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slideCount;
+            slides[currentSlide].classList.add('active');
+        };
+        
+        const prevSlide = function() {
+            if (slideCount <= 1) return; // Don't animate if only one slide
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            slides[currentSlide].classList.add('active');
+        };
+        
+        // Auto-slide with performance optimizations
+        const startAutoSlide = function() {
+            stopAutoSlide();
+            if (slideCount > 1 && isVisible) {
+                autoSlideInterval = setTimeout(function autoSlide() {
+                    nextSlide();
+                    autoSlideInterval = setTimeout(autoSlide, 7000);
+                }, 7000);
+            }
+        };
+        
+        const stopAutoSlide = function() {
+            if (autoSlideInterval) {
+                clearTimeout(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        };
+        
+        // Add event listeners with passive option for touch events
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide, {passive: true});
+        sliderContainer.addEventListener('mouseleave', startAutoSlide, {passive: true});
+        
+        // Ensure first slide is active
+        if (slides[0] && !slides[0].classList.contains('active')) {
+            slides[0].classList.add('active');
+        }
+        
+        // Start auto-slide
+        startAutoSlide();
+        
+        // Preload next slide image when idle
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(function() {
+                const images = document.querySelectorAll('.smartel-slide:not(.active) img');
+                if (images.length) {
+                    images.forEach(img => {
+                        if (img.getAttribute('loading') === 'lazy') {
+                            // Force load the image
+                            const src = img.getAttribute('src');
+                            if (src) {
+                                const preloadImg = new Image();
+                                preloadImg.src = src;
+                            }
+                        }
+                    });
+                }
+            });
         }
     };
     
-    // Initialize the slider if it exists on the page
-    if (document.querySelector('.smartel-slider')) {
-        slider.init();
+    // Use requestIdleCallback if available, or fallback to setTimeout
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+            setupSlider();
+        });
+    } else {
+        // Use a small delay to allow critical content to load first
+        setTimeout(setupSlider, 100);
     }
-});
+})();

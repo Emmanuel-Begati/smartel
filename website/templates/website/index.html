@@ -10,16 +10,16 @@
     <!-- Preload slider images for faster initial render -->
     <link rel="preload" as="image" href="{% static 'website/image/section-image/group_new.png' %}">
     
-    <!-- Include Custom HTML Slider JavaScript with async attribute -->
-    <script async src="{% static 'website/js/slider-scripts.js' %}"></script>
+    <!-- Optimized slider -->
+    <script defer src="{% static 'website/js/slider-scripts.js' %}"></script>
 
     <!-- banner --> 
     <div class="banner py-0">
-        <!-- START Custom HTML Slider -->
+        <!-- START Custom HTML Slider with optimized loading -->
         <div class="smartel-slider">
-            <!-- Slide 1 -->
+            <!-- Slide 1 - always visible first -->
             <div class="smartel-slide slide-1 active">
-                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="Smartel Logo" class="slide-logo">
+                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="Smartel Logo" class="slide-logo" fetchpriority="high">
                 <h2 class="slide-heading">
                     Early Crop Pest And<br />
                     <span class="highlight">Disease</span> Detection Technology
@@ -30,9 +30,9 @@
                 <a href="#problem" class="slide-button">See Our Services</a>
             </div>
             
-            <!-- Slide 2 -->
-            <div class="smartel-slide slide-2">
-                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="Smartel Logo" class="slide-logo">
+            <!-- Slide 2 - loaded after DOM ready -->
+            <div class="smartel-slide slide-2" style="visibility:hidden;">
+                <img src="{% static 'website/image/section-image/group_new.png' %}" alt="Smartel Logo" class="slide-logo" loading="lazy">
                 <h2 class="slide-heading">
                     Democratizing AI<br />
                     <span class="highlight">for Climate</span> Resilience
@@ -46,6 +46,17 @@
                 <button id="slider-next" aria-label="Next slide">❯</button>
             </div>
         </div>
+        <script>
+        // Show slide 2 after DOM fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const slide2 = document.querySelector('.slide-2');
+            if (slide2) {
+                setTimeout(function() {
+                    slide2.style.visibility = 'visible';
+                }, 100);
+            }
+        });
+        </script>
     </div>
     <!-- END Custom HTML Slider -->
 
