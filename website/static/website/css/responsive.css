@@ -6,6 +6,16 @@
     .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
         margin-right: 20px; /* Reduced from 30px */
     }
+    
+    /* Adjust Get in Touch button size */
+    .pq-button.pq-button-flat {
+        padding: 10px 20px; /* Slightly smaller padding */
+    }
+    
+    .pq-button-text {
+        font-size: 16px; /* Slightly smaller font */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
 }
 
 @media (max-width: 1279px) {
@@ -19,12 +29,32 @@
     .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
         margin-right: 15px;
     }
+    
+    /* Make Get in Touch button visible on all device sizes */
+    .pq-header-style-1 .pq-bottom-header .pq-header-right .pq-header-icon .pq-btn-container {
+        display: inline-block !important; /* Override the display: none from max-width:1279px */
+    }
+    
+    /* Adjust button for smaller screens */
+    .pq-button.pq-button-flat {
+        padding: 8px 16px; /* Smaller padding */
+        font-size: 14px; /* Smaller font */
+    }
 }
 
 @media (max-width: 1199px) {
     /* Additional adjustments for smaller screens */
     .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
         margin-right: 10px; /* Even less space between items */
+    }
+    
+    /* Further reduce the size of the Get in Touch button */
+    .pq-button.pq-button-flat {
+        padding: 7px 15px;
+    }
+    
+    .pq-button-text {
+        font-size: 14px;
     }
 }
 
@@ -40,10 +70,91 @@
         line-height: normal;
         padding: 10px 15px;
     }
+    
+    /* Responsive Get in Touch button for mobile */
+    .pq-header-right.d-none.d-lg-block {
+        display: block !important; /* Show the button on mobile */
+        margin-top: 15px;
+        text-align: center;
+    }
+    
+    .pq-header-icon {
+        justify-content: center;
+    }
 }
 
-/* Specific fix for the "Our Product" menu item to prevent wrapping */
+@media (max-width: 767px) {
+    /* Styles for small mobile devices */
+    .pq-button.pq-button-flat {
+        padding: 6px 14px;
+    }
+    
+    .pq-button-text {
+        font-size: 13px;
+    }
+    
+    /* Center the Get in Touch button on very small screens */
+    .pq-btn-container {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+    
+    /* Make all buttons in content areas responsive */
+    section .pq-button.pq-button-flat {
+        display: inline-block;
+        padding: 8px 16px;
+        white-space: nowrap;
+    }
+}
+
+/* Specific fix for all menu items to prevent wrapping */
 .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
     white-space: nowrap; /* Ensure text stays on one line for all items */
     display: inline-block; /* Better control over text */
+}
+
+/* Global button text fix to prevent wrapping */
+.pq-button-text {
+    white-space: nowrap;
+}
+
+/* Fix for button containers in all locations */
+.pq-btn-container {
+    display: inline-block;
+}
+
+/* Additional rules for buttons in content sections */
+.cta-section .pq-button-flat,
+.portfolio-details .pq-button-flat,
+.contact-form .pq-button-flat,
+.available-opportunities .pq-button-flat {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Fix for mobile and tablet displays to ensure the button is visible */
+@media (max-width: 991px) {
+    /* Make Get in Touch button visible on header for all screen sizes */
+    .pq-header-style-1 .pq-header-right {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .pq-header-right.d-none {
+        display: block !important;
+    }
+    
+    /* Clean arrangement for mobile devices */
+    .navbar > .pq-header-right {
+        order: 3;
+        width: 100%;
+    }
+    
+    /* Ensure the button text doesn't wrap or overflow */
+    .pq-btn-container .pq-button-flat .pq-button-text {
+        display: inline-block;
+        font-size: 14px;
+    }
 }
