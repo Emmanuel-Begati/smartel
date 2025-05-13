@@ -1,19 +1,86 @@
 /* 
- * Responsive CSS for Smartel
- * Improves responsiveness for Revolution Slider and Navigation
- * Optimized for Mac and Mobile devices
+ * Enhanced Responsive CSS for Smartel
+ * Comprehensive responsiveness for all devices and orientations
+ * 
+ * Standard Breakpoints:
+ * - Extra Small Mobile: ≤ 375px
+ * - Mobile: 376px - 480px
+ * - Small Tablets: 481px - 640px
+ * - Tablets: 641px - 768px
+ * - Small Laptops: 769px - 991px
+ * - Desktops: 992px - 1199px
+ * - Large Desktops: 1200px - 1400px
+ * - Extra Large: > 1400px
+ *
+ * Includes:
+ * - Orientation-specific adjustments (portrait/landscape)
+ * - High-DPI screen optimizations (Retina displays)
+ * - Print media styles
+ * - Accessibility improvements
+ * - Dark mode support
  */
 
-/* General Responsive Fixes */
-@media (max-width: 1400px) {
+/*====================
+  EXTRA LARGE DESKTOPS (>1400px)
+====================*/
+@media (min-width: 1401px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Enlarged typography for very large screens */
+    body {
+        font-size: 16px;
+    }
+    
+    /* Additional spacing for very large screens */
+    .section-padding {
+        padding: 100px 0;
+    }
+    
+    /* Enhance readability on ultra-wide screens */
+    .container.content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Improved grid layout for large screens */
+    .row.feature-row {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    
+    .row.feature-row > [class*="col-"] {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* General Responsive Fixes - Large Desktop */
+@media (max-width: 1400px) and (min-width: 1200px) {
     .container-fluid {
         padding-left: 30px;
         padding-right: 30px;
     }
+    
+    /* Adjust section padding for large desktop */
+    .section-padding {
+        padding: 80px 0;
+    }
+    
+    /* Adjust font sizes slightly */
+    h1, .h1 {
+        font-size: 2.75rem;
+    }
+    
+    h2, .h2 {
+        font-size: 2.25rem;
+    }
 }
 
-/* Mac-specific enhancements */
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
+/* Mac-specific and high-DPI enhancements */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
     /* Sharper text rendering for Retina displays */
     body {
         -webkit-font-smoothing: antialiased;
@@ -24,10 +91,17 @@
     img {
         image-rendering: -webkit-optimize-contrast;
     }
+    
+    /* Better font rendering for high-DPI screens */
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.01em;
+    }
 }
 
-/* Navigation Responsiveness */
-@media (max-width: 1199px) {
+/*====================
+  DESKTOPS (992px-1199px)
+====================*/
+@media (max-width: 1199px) and (min-width: 992px) {
     /* Adjust logo size */
     .pq-header-logo .navbar-brand img {
         max-height: 50px;
@@ -49,6 +123,25 @@
     .pq-top-header .pq-header-contact ul li {
         margin-right: 15px;
     }
+    
+    /* Section spacing adjustments */
+    .section-padding {
+        padding: 70px 0;
+    }
+    
+    /* Font size adjustments */
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2, .h2 {
+        font-size: 2rem;
+    }
+    
+    /* Adjust container width */
+    .container {
+        max-width: 960px;
+    }
 }
 
 /* Further adjustments for medium-size screens before mobile menu appears */
@@ -62,7 +155,40 @@
     }
 }
 
-@media (max-width: 991px) {
+/*====================
+  SMALL LAPTOPS & TABLETS LANDSCAPE (769px-991px)
+====================*/
+@media (max-width: 991px) and (min-width: 769px) {
+    /* Adjust section spacing */
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    /* Adjust typography */
+    h1, .h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.875rem;
+    }
+    
+    /* Grid adjustments */
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Collapse certain multi-column layouts */
+    .row.collapse-md {
+        flex-direction: column;
+    }
+    
+    .row.collapse-md > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    
     /* Mobile Menu Improvements */
     .navbar-toggler {
         padding: 10px;
@@ -111,14 +237,11 @@
         justify-content: center;
         margin-bottom: 5px;
     }
-}
-
-/* Revolution Slider Responsiveness */
-@media (max-width: 991px) {
+    
     /* Improve slider text visibility on smaller screens */
     rs-layer[data-type="text"] {
-        font-size: 14px !important;
-        line-height: 1.2 !important;
+        font-size: 16px !important;
+        line-height: 1.4 !important;
     }
     
     rs-layer[data-type="button"] {
@@ -128,11 +251,50 @@
     
     /* Better overlay for mobile */
     rs-slide::before {
-        background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for mobile */
+        background: rgba(0, 0, 0, 0.5);
     }
 }
 
-@media (max-width: 767px) {
+/*====================
+  TABLETS (641px-768px)
+====================*/
+@media (max-width: 768px) and (min-width: 641px) {
+    /* Further typography adjustments */
+    h1, .h1 {
+        font-size: 2rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Adjust spacing */
+    .section-padding {
+        padding: 50px 0;
+    }
+    
+    .container {
+        max-width: 540px;
+    }
+    
+    /* Improve grid layout for tablets */
+    .row.feature-row > [class*="col-md-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    /* Adjust image sizes */
+    .img-fluid {
+        max-width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+    
     /* Further reduce text size for very small screens */
     rs-layer[data-type="text"] {
         font-size: 2rem !important;
@@ -154,10 +316,85 @@
     rs-layer[data-type="button"] {
         margin-top: 10px !important;
     }
+    
+    /* Form element adjustments */
+    input, select, textarea {
+        font-size: 16px !important; /* Prevents zoom on focus in iOS */
+    }
 }
 
-/* Additional fixes for very small screens */
-@media (max-width: 480px) {
+/*====================
+  SMALL TABLETS (481px-640px)
+====================*/
+@media (max-width: 640px) and (min-width: 481px) {
+    /* Typography adjustments */
+    h1, .h1 {
+        font-size: 1.875rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.625rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.375rem;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    /* Additional grid adjustments */
+    .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Adjust section spacing */
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    /* Optimize buttons for smaller screens */
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Adjust navigation and header elements */
+    .pq-header-logo .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+/*====================
+  MOBILE (376px-480px)
+====================*/
+@media (max-width: 480px) and (min-width: 376px) {
+    /* Typography further reduced */
+    h1, .h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.25rem;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    /* Content spacing */
+    .section-padding {
+        padding: 30px 0;
+    }
+    
+    /* Revolution slider text adjustments */
     rs-layer[data-type="text"] {
         font-size: 1.5rem !important;
     }
@@ -170,6 +407,208 @@
     .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
+    }
+    
+    /* Button optimization */
+    .btn {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+    
+    /* Stack grid items */
+    .row > [class*="col-"] {
+        margin-bottom: 20px;
+    }
+}
+
+/*====================
+  EXTRA SMALL MOBILE (≤375px)
+====================*/
+@media (max-width: 375px) {
+    /* Minimal typography for tiny screens */
+    h1, .h1 {
+        font-size: 1.625rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.375rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.25rem;
+    }
+    
+    body {
+        font-size: 13px;
+    }
+    
+    /* Extreme space optimization */
+    .section-padding {
+        padding: 25px 0;
+    }
+    
+    .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    /* Simplify UI elements */
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        white-space: normal;
+    }
+    
+    /* Minimize logo */
+    .pq-header-logo .navbar-brand img {
+        max-height: 35px;
+    }
+    
+    /* Revolution slider minimization */
+    rs-layer[data-type="text"] {
+        font-size: 1.25rem !important;
+    }
+    
+    rs-layer[data-type="button"] {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+    }
+    
+    /* Hide secondary elements */
+    .hide-xxs {
+        display: none !important;
+    }
+}
+
+/*====================
+  ORIENTATION SPECIFIC
+====================*/
+/* Portrait Mode (height > width) */
+@media (orientation: portrait) {
+    /* Optimize vertical scrolling layouts */
+    .vertical-layout-adjust {
+        flex-direction: column;
+    }
+    
+    /* Adjust hero section in portrait mode */
+    .hero-section {
+        min-height: 60vh;
+    }
+    
+    /* Optimize vertical spacing */
+    .row.portrait-stack > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+/* Landscape Mode (width > height) */
+@media (orientation: landscape) and (max-width: 991px) {
+    /* Better use of horizontal space on small screens */
+    .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    
+    /* Improve header in landscape */
+    .pq-top-header {
+        display: none; /* Often better to hide in landscape mobile */
+    }
+    
+    /* Adjust hero section height for landscape */
+    .hero-section {
+        min-height: 85vh;
+    }
+    
+    /* Use two columns when possible in landscape */
+    .row.landscape-row > [class*="col-sm-12"] {
+        width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/*====================
+  ACCESSIBILITY IMPROVEMENTS
+====================*/
+/* Larger touch targets on mobile */
+@media (max-width: 991px) {
+    /* Increase tap target sizes for better accessibility */
+    .nav-link, 
+    .btn,
+    .form-control,
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Improve form field accessibility */
+    input, select, textarea {
+        font-size: 16px !important; /* Prevents zoom on focus in iOS */
+    }
+}
+
+/*====================
+  PRINT STYLES
+====================*/
+@media print {
+    /* Hide navigation and interactive elements */
+    header, footer, .no-print, button, .btn, nav {
+        display: none !important;
+    }
+    
+    /* Optimize typography for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    /* Ensure links show their URL in parentheses */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    /* Break pages appropriately */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        page-break-inside: avoid;
+        max-width: 100% !important;
+    }
+    
+    /* Control page breaks */
+    p, blockquote, ul, ol, dl, table {
+        page-break-inside: avoid;
+    }
+}
+
+/*====================
+  DARK MODE SUPPORT
+====================*/
+@media (prefers-color-scheme: dark) {
+    /* Only applies to browsers/OS with dark mode support */
+    body.support-dark-mode {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+    
+    body.support-dark-mode a {
+        color: #64B5F6;
+    }
+    
+    body.support-dark-mode .bg-light {
+        background-color: #1e1e1e !important;
+    }
+    
+    body.support-dark-mode .text-dark {
+        color: #e0e0e0 !important;
     }
 }
 
@@ -187,6 +626,11 @@
     .dropdown.show .dropdown-menu {
         display: block;
     }
+    
+    /* Improve touch experience */
+    .dropdown-toggle {
+        padding-right: 25px; /* Extra space for the tap target */
+    }
 }
 
 /* Make Revolution Slider more responsive */
@@ -198,16 +642,39 @@ rs-module {
     width: 100% !important;
 }
 
-/* Improve form elements on mobile */
-@media (max-width: 767px) {
-    input, select, textarea {
-        font-size: 16px !important; /* Prevents zoom on focus in iOS */
-    }
-}
-
 /* Fix for sticky header on iOS */
 .pq-has-sticky.pq-header-sticky {
     position: fixed;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+}
+
+/* Fix for iPads and larger tablets in both orientations */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Specific iPad optimizations */
+    .container {
+        width: 95%;
+    }
+    
+    /* Fix for elements that may render incorrectly on iPads */
+    .safari-ipad-fix {
+        -webkit-appearance: none;
+        -webkit-backface-visibility: hidden;
+    }
+}
+
+/* Fix for notched phones (iPhone X and newer) */
+@supports (padding: max(0px)) {
+    .notch-aware {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+    }
+    
+    .has-notch header {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .has-notch footer {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
