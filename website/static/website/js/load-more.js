@@ -62,26 +62,42 @@ jQuery(function (jQuery) {
         jQuery(".pq-grid").isotope("layout");
       }
     }
-    // function that hides items when page is loaded
+    // function that hides items when page is loaded - optimized for performance
     function hideItems(pagination) {
-      var itemsMax = jQuery(".pq-filter-items").length;
+      var $items = jQuery(".pq-filter-items");
+      var itemsMax = $items.length;
+      var $showMoreButton = jQuery("#showMore");
+      var hasVisibleItems = false;
 
-      var itemsCount = 0;
-      jQuery(".pq-filter-items").each(function () {
-        if (itemsCount >= pagination) {
-          jQuery(this).addClass("visible_item");
+      // Use cached jQuery references and faster DOM manipulation
+      if (itemsMax > 0) {
+        // Process all items in a single pass for better performance
+        $items.each(function(index) {
+          if (index >= pagination) {
+            jQuery(this).addClass("visible_item");
+            hasVisibleItems = true;
+          }
+        });
+
+        // Only manipulate DOM when needed
+        if (!hasVisibleItems || initial_items >= itemsMax) {
+          $showMoreButton.hide();
         }
-        itemsCount++;
-      });
-      if (itemsCount < itemsMax || initial_items >= itemsMax) {
-        jQuery("#showMore").hide();
-      }
-      if (jQuery(".pq-masonry").length > 0) {
-        jQuery(".pq-masonry").isotope("layout");
-      }
 
-      if (jQuery(".pq-grid").length > 0) {
-        jQuery(".pq-grid").isotope("layout");
+        // Defer layout recalculations to next frame for better performance
+        requestAnimationFrame(function() {
+          // Trigger layout only if elements exist to avoid unnecessary processing
+          if (jQuery(".pq-masonry").length > 0) {
+            jQuery(".pq-masonry").isotope("layout");
+          }
+          
+          if (jQuery(".pq-grid").length > 0) {
+            jQuery(".pq-grid").isotope("layout");
+          }
+        });
+      } else {
+        // No items to show, hide the button
+        $showMoreButton.hide();
       }
     }
     jQuery("#showMore").on("click", function (e) {
