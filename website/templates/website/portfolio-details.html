@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+<!-- Link to Portfolio/Careers CSS -->
+<link rel="stylesheet" href="{% static 'website/css/portfolio-details.css' %}">
+
 <!-- Breadcrumb -->
 <section class="pq-breadcrumb-style-1">
     <div class="container">
@@ -65,7 +68,7 @@
                 <div class="card h-100 border-0 shadow">
                     <div class="card-body text-center py-5">
                         <div class="mb-4">
-                            <i class="flaticon-sprout text-success" style="font-size: 48px;"></i>
+                            <i class="flaticon-sprout text-success icon-large"></i>
                         </div>
                         <h4>Mission-Driven</h4>
                         <p>Make a meaningful impact on global food security and environmental sustainability through technology</p>
@@ -76,7 +79,7 @@
                 <div class="card h-100 border-0 shadow">
                     <div class="card-body text-center py-5">
                         <div class="mb-4">
-                            <i class="flaticon-ecologist text-success" style="font-size: 48px;"></i>
+                            <i class="flaticon-ecologist text-success icon-large"></i>
                         </div>
                         <h4>Innovation</h4>
                         <p>Work with cutting-edge technologies including AI, IoT, and machine learning in a fast-paced environment</p>
@@ -87,7 +90,7 @@
                 <div class="card h-100 border-0 shadow">
                     <div class="card-body text-center py-5">
                         <div class="mb-4">
-                            <i class="flaticon-planting-1 text-success" style="font-size: 48px;"></i>
+                            <i class="flaticon-planting-1 text-success icon-large"></i>
                         </div>
                         <h4>Growth</h4>
                         <p>Develop your skills in a supportive environment with opportunities for learning and career advancement</p>
@@ -186,104 +189,10 @@
     </div>
 </section>
 
-<style>
-    /* Career page styling */
-    .careers-carousel .owl-carousel .item img {
-        height: 500px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-    
-    .careers-carousel .owl-nav button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 50px;
-        height: 50px;
-        border-radius: 50% !important;
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
-    .careers-carousel .owl-nav button:hover {
-        background-color: rgba(107, 142, 35, 0.9) !important;
-    }
-    
-    .careers-carousel .owl-nav button span {
-        font-size: 2rem;
-        line-height: 0;
-        position: relative;
-        top: -3px;
-        color: #333;
-    }
-    
-    .careers-carousel .owl-nav button:hover span {
-        color: #fff;
-    }
-    
-    .careers-carousel .owl-nav .owl-prev {
-        left: 20px;
-    }
-    
-    .careers-carousel .owl-nav .owl-next {
-        right: 20px;
-    }
-    
-    .card {
-        transition: all 0.3s ease;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
-    }
-    
-    .card-title {
-        font-size: 1.35rem;
-        position: relative;
-        padding-bottom: 12px;
-    }
-    
-    .card-title:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background-color: #6b8e23;
-    }
-    
-    .btn-outline-success {
-        color: #6b8e23;
-        border-color: #6b8e23;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-outline-success:hover {
-        background-color: #6b8e23;
-        color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(107, 142, 35, 0.2);
-    }
-    
-    .fas.fa-check-circle {
-        color: #6b8e23;
-    }
-    
-    .career-description p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        max-width: 900px;
-        margin: 0 auto;
-        color: #555;
-    }
-</style>
+
+
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

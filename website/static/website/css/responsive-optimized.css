@@ -1,0 +1,241 @@
+/* 
+ * Responsive CSS - Optimized
+ * Comprehensive responsiveness for all devices and orientations
+ */
+
+/*====================
+  EXTRA LARGE DESKTOPS (>1400px)
+====================*/
+@media (min-width: 1401px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Enlarged typography for very large screens */
+    body {
+        font-size: 16px;
+    }
+    
+    /* Additional spacing for very large screens */
+    .section-padding {
+        padding: 100px 0;
+    }
+    
+    /* Enhance readability on ultra-wide screens */
+    .container.content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Improved grid layout for large screens */
+    .row.feature-row {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    
+    .row.feature-row > [class*="col-"] {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* General Responsive Fixes - Large Desktop */
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    /* Adjust section padding for large desktop */
+    .section-padding {
+        padding: 80px 0;
+    }
+    
+    /* Adjust font sizes slightly */
+    h1, .h1 {
+        font-size: 2.75rem;
+    }
+    
+    h2, .h2 {
+        font-size: 2.25rem;
+    }
+}
+
+/* TABLETS AND MOBILE DEVICES */
+@media (max-width: 991px) {
+    /* Common tablet/mobile adjustments */
+    body {
+        font-size: 15px;
+    }
+    
+    h1, .h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.9rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.65rem;
+    }
+    
+    /* Adjust section spacing */
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    /* Improved mobile navigation */
+    .navbar-toggler {
+        border: none;
+        padding: 10px;
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    
+    /* Adjust container padding */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* MOBILE SPECIFIC */
+@media (max-width: 767px) {
+    /* Hide second image columns in Problem and About sections on small screens */
+    #problem .pq-about-media .col-md-6:nth-child(2),
+    #about .pq-about-media .col-md-6:nth-child(2) {
+        display: none !important;
+    }
+    
+    /* Tighter padding and smaller text */
+    #problem .container,
+    #about .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .problem-paragraph p,
+    #about .pq-title-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    /* Center remaining image */
+    #problem .pq-image-1,
+    #about .pq-image-1 {
+        margin: 0 auto 20px;
+        display: block;
+    }
+    
+    /* Stack solution section columns full-width and center text */
+    #solution .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    #solution .pq-section-title {
+        text-align: center;
+    }
+    
+    /* Features section: one service card per row */
+    .pq-service-box-container .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* How Sentra Works: full-width steps */
+    #how-sentra-works .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /* Contact button centering */
+    #contact .pq-btn-container {
+        text-align: center;
+    }
+    
+    /* Adjust font sizes for mobile */
+    h1, .h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* Adjust spacing for mobile */
+    .section-padding {
+        padding: 40px 0;
+    }
+}
+
+/* SMALL MOBILE DEVICES */
+@media (max-width: 480px) {
+    /* Extreme mobile optimizations */
+    body {
+        font-size: 14px;
+    }
+    
+    h1, .h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.35rem;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Further reduce padding */
+    .section-padding {
+        padding: 30px 0;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    /* Print optimization */
+    body {
+        font-size: 12pt;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    /* Hide unnecessary elements for printing */
+    .no-print,
+    nav, 
+    footer,
+    .social-icons,
+    .video-section,
+    .pq-btn-container {
+        display: none !important;
+    }
+    
+    /* Ensure images print properly */
+    img {
+        max-width: 100% !important;
+    }
+    
+    /* Avoid page breaks inside important sections */
+    .page-break-avoid {
+        page-break-inside: avoid;
+    }
+}

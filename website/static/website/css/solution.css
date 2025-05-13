@@ -1,0 +1,129 @@
+/* Solution styles have been moved to enhanced-sections.css to avoid duplication */
+
+/* Container positioning */
+.pq-solution-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Solution device image */
+.solution-device {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.pq-solution-section:hover .solution-device {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(107, 142, 35, 0.25);
+}
+
+/* Solution box styling */
+.solution-box {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-left: 3px solid transparent;
+}
+
+.solution-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    border-left: 3px solid #6b8e23;
+}
+
+/* How Sentra Works Section */
+.how-sentra-works .section-title {
+    font-size: 32px;
+    color: #6b8e23;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.how-sentra-works .section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #6b8e23;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.how-sentra-works .work-step {
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.how-sentra-works .work-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.how-sentra-works .step-icon {
+    font-size: 40px;
+    color: #6b8e23;
+}
+
+.how-sentra-works h4 {
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.how-sentra-works p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* Slider-specific styles */
+/* Revolution Slider Background Overlay - Added to improve text visibility */
+rs-slide::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.60); /* Dark overlay */
+    z-index: 2;  /* Position above the background but below the content */
+}
+
+/* Ensure slider content remains above the overlay */
+rs-layer {
+    z-index: 5 !important;
+}
+
+/* Enhanced text shadow for better readability */
+rs-layer[id*="layer-1"] {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+    /* Stack solution section columns full-width and center text */
+    #solution .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #solution .pq-section-title {
+        text-align: center;
+    }
+    /* Features section: one service card per row */
+    .pq-service-box-container .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    /* How Sentra Works: full-width steps */
+    .how-sentra-works .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

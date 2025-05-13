@@ -1,0 +1,251 @@
+/* 
+ * Portfolio / Careers Page CSS
+ * Contains styles for the portfolio/careers page in Smartel website
+ */
+
+/* ===================================
+ * Carousel Styling
+ * =================================== */
+.careers-carousel .owl-carousel .item img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.careers-carousel .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.careers-carousel .owl-nav button:hover {
+    background-color: rgba(107, 142, 35, 0.9) !important;
+}
+
+.careers-carousel .owl-nav button span {
+    font-size: 2rem;
+    line-height: 0;
+    position: relative;
+    top: -3px;
+    color: #333;
+}
+
+.careers-carousel .owl-nav button:hover span {
+    color: #fff;
+}
+
+.careers-carousel .owl-nav .owl-prev {
+    left: 20px;
+}
+
+.careers-carousel .owl-nav .owl-next {
+    right: 20px;
+}
+
+/* ===================================
+ * Card Styling
+ * =================================== */
+.card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-title {
+    font-size: 1.35rem;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.card-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #6b8e23;
+}
+
+.btn-outline-success {
+    color: #6b8e23;
+    border-color: #6b8e23;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #6b8e23;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(107, 142, 35, 0.2);
+}
+
+/* Icon Styling */
+.icon-large {
+    font-size: 48px;
+}
+
+.fas.fa-check-circle {
+    color: #6b8e23;
+}
+
+/* Career Description */
+.career-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* ===================================
+ * Position Details Section
+ * =================================== */
+.position-details-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.position-details {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.position-details h3 {
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.position-details h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #6b8e23;
+}
+
+.position-details ul {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.position-details ul li {
+    margin-bottom: 10px;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #6b8e23;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #6b8e23;
+}
+
+.apply-button:hover {
+    background-color: transparent;
+    color: #6b8e23;
+    box-shadow: 0 5px 15px rgba(107, 142, 35, 0.2);
+}
+
+/* ===================================
+ * Application Process Section
+ * =================================== */
+.application-process-section {
+    padding: 70px 0;
+}
+
+.process-step {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.process-step .step-icon {
+    font-size: 2.5rem;
+    color: #6b8e23;
+    margin-bottom: 20px;
+}
+
+.process-step .step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6b8e23;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.process-step h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ===================================
+ * Team Members Section
+ * =================================== */
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member .member-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.team-member .member-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.team-member h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.team-member .position {
+    color: #6b8e23;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
