@@ -2,10 +2,6 @@
 {%load static%}
 
 {% block content %}
-    <!-- Include critical CSS files -->
-    <link rel="stylesheet" href="{% static 'website/css/sections-optimized.css' %}">
-    <link rel="stylesheet" href="{% static 'website/css/components-optimized.css' %}">
-    <link rel="stylesheet" href="{% static 'website/css/slider-styles.css' %}">
     
     <!-- Preload slider images for faster initial render -->
     <link rel="preload" as="image" href="{% static 'website/image/section-image/group_new.png' %}">
@@ -728,10 +724,7 @@
     <!-- Include enhanced sections script -->
     <script src="{% static 'website/js/enhanced-sections.js' %}"></script>
     <script src="{% static 'website/js/impact-metrics.js' %}"></script>
-    
-    <!-- Include Impact Metrics CSS -->
-    <link rel="stylesheet" href="{% static 'website/css/impact-metrics.css' %}">
-    
+        
     <!-- Collapse navbar on mobile after link click -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
