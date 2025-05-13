@@ -11,9 +11,6 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
 
-    <!-- rev css -->
-    <link rel="stylesheet" href="{% static 'website/rev/css/rs6.css' %}">
-
     <!-- Animation -->
     <link rel="stylesheet" href="{% static 'website/css/animations.min.css' %}">
 
@@ -33,12 +30,10 @@
     <!-- Style -->
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
     
-    <!-- Solution Animations CSS -->
-    <link rel="stylesheet" href="{% static 'website/css/solution-animations.css' %}">
-
     <!-- Optimized Responsive CSS -->
     <link rel="stylesheet" href="{% static 'website/css/responsive-optimized.css' %}">
-
+    
+    <!-- Responsive Navbar CSS -->
     
     <!-- Meta Description -->
     <meta name="description" content="Sentra - Solar-powered crop pest and disease detection technology. Real-time monitoring, early detection, and AI-driven insights to protect smallholder farmers' crops.">
@@ -93,10 +88,16 @@
                 <nav class="navbar navbar-expand-lg navbar-light">
 
                     <div class="pq-header-logo">
-                        <a class="navbar-brand" href="https://agritex.peacefulqode.co.in/">
-                            <img class="img-fluid logo" src="{% static 'website/image/logo/logo-1.png' %}" alt="agritex">
+                        <a class="navbar-brand" href="/">
+                            <img class="img-fluid logo" src="{% static 'website/image/logo/logo-1.png' %}" alt="Sentra">
                         </a>
                     </div>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <div class="pq-menu-contain">
@@ -132,8 +133,7 @@
                         </div>
                     </div>
                     
-
-                    <div class="pq-header-right">
+                    <div class="pq-header-right d-none d-lg-block">
                         <div class="pq-header-icon">
                             <!-- Clickable Phone Contact -->
                             <div class="pq-header-contact">
@@ -153,14 +153,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
 
                 </nav>
             </div>
@@ -278,8 +270,6 @@
 
 <!-- Rev Slider -->
 <script src="{% static 'website/js/rev-custom.js' %}"></script>
-<script src="{% static 'website/rev/js/rs6.min.js' %}"></script>
-<script src="{% static 'website/rev/js/rbtools.min.js' %}"></script>
 
 <!-- GSAP JS -->
 <script src="{% static 'website/js/gsap.min.js' %}"></script>
@@ -307,6 +297,70 @@
 
 <!-- Counter Animation JS -->
 <script src="{% static 'website/js/counter-fix.js' %}"></script>
+
+<!-- Enhanced Responsive Navigation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Close navbar when clicking anywhere outside
+    document.addEventListener('click', function(event) {
+        const navbarMenu = document.getElementById('navbarNavDropdown');
+        const togglerButton = document.querySelector('.navbar-toggler');
+        
+        if (navbarMenu && navbarMenu.classList.contains('show') && 
+            !navbarMenu.contains(event.target) && 
+            !togglerButton.contains(event.target)) {
+            navbarMenu.classList.remove('show');
+        }
+    });
+
+    // Automatically close navbar when a link is clicked
+    const navLinks = document.querySelectorAll('.navbar-collapse a');
+    navLinks.forEach(function(navLink) {
+        navLink.addEventListener('click', function() {
+            const navbarMenu = document.getElementById('navbarNavDropdown');
+            if (navbarMenu.classList.contains('show')) {
+                new bootstrap.Collapse(navbarMenu).hide();
+            }
+        });
+    });
+
+    // Fix for iOS devices - preventing text size adjustment
+    document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+    
+    // Add active class based on current page
+    const currentPath = window.location.pathname;
+    const menuItems = document.querySelectorAll('.pq-main-menu .menu-item');
+    
+    menuItems.forEach(function(item) {
+        const link = item.querySelector('a');
+        if (!link) return;
+        
+        const href = link.getAttribute('href');
+        if ((href === '/' && currentPath === '/') || 
+            (href !== '/' && currentPath.includes(href.replace('/#', '')))) {
+            item.classList.add('current-menu-item');
+        } else {
+            item.classList.remove('current-menu-item');
+        }
+    });
+    
+    // Adjust logo height based on scroll position for desktop
+    const header = document.getElementById('pq-header');
+    const logoImg = document.querySelector('.pq-header-logo .navbar-brand img');
+    
+    if (window.innerWidth >= 992) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                if (logoImg) logoImg.style.maxHeight = '45px';
+                if (header) header.classList.add('pq-header-sticky');
+            } else {
+                if (logoImg) logoImg.style.maxHeight = '';
+                if (header) header.classList.remove('pq-header-sticky');
+            }
+        });
+    }
+});
+</script>
 </body>
 
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpbh-mt'},{'server':'sg2plmcpnl492384'},{'dcenter':'sg2'},{'cp_id':'9858662'},{'cp_cache':''},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.

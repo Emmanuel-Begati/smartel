@@ -40,12 +40,12 @@
 
 /* Slide backgrounds with zoom animation */
 .smartel-slide.slide-1 {
-    background-image: url('../rev/assets/page-1/1-4.jpg');
+    background-image: url('../image/page-1/1-4.webp');
     animation: zoomEffect 10s infinite alternate;
 }
 
 .smartel-slide.slide-2 {
-    background-image: url('../rev/assets/page-1/2-3.jpg');
+    background-image: url('../image/page-1/2-3.webp');
     animation: zoomEffect 10s infinite alternate;
 }
 

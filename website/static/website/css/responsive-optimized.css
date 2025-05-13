@@ -11,9 +11,18 @@
         max-width: 1320px;
     }
     
-    /* Enlarged typography for very large screens */
+    /* Base typography for very large screens */
+    html {
+        font-size: 100%; /* 16px base */
+    }
+    
     body {
-        font-size: 16px;
+        font-size: 1.125rem; /* 18px for better readability on large screens */
+    }
+    
+    p {
+        font-size: 1.0625rem; /* 17px */
+        line-height: 1.7;
     }
     
     /* Additional spacing for very large screens */
@@ -46,38 +55,74 @@
         padding-right: 30px;
     }
     
+    /* Set base font size for large desktop */
+    html {
+        font-size: 100%; /* 16px base */
+    }
+    
+    body {
+        font-size: 1.0625rem; /* 17px for standard large desktop */
+    }
+    
+    p {
+        font-size: 1rem; /* 16px */
+        line-height: 1.65;
+    }
+    
     /* Adjust section padding for large desktop */
     .section-padding {
         padding: 80px 0;
     }
     
-    /* Adjust font sizes slightly */
+    /* Responsive heading sizes for large desktop */
     h1, .h1 {
-        font-size: 2.75rem;
+        font-size: 2.75rem; /* ~44px */
     }
     
     h2, .h2 {
-        font-size: 2.25rem;
+        font-size: 2.25rem; /* ~36px */
+    }
+    
+    h3, .h3 {
+        font-size: 1.75rem; /* ~28px */
+    }
+    
+    h4, .h4 {
+        font-size: 1.375rem; /* ~22px */
     }
 }
 
 /* TABLETS AND MOBILE DEVICES */
 @media (max-width: 991px) {
     /* Common tablet/mobile adjustments */
-    body {
-        font-size: 15px;
+    html {
+        font-size: 100%; /* Maintain 16px base */
     }
     
+    body {
+        font-size: 1rem; /* 16px base font */
+    }
+    
+    p {
+        font-size: 1rem; /* 16px */
+        line-height: 1.6;
+    }
+    
+    /* Responsive heading sizes for tablets */
     h1, .h1 {
-        font-size: 2.25rem;
+        font-size: 2.25rem; /* ~36px */
     }
     
     h2, .h2 {
-        font-size: 1.9rem;
+        font-size: 1.875rem; /* ~30px */
     }
     
     h3, .h3 {
-        font-size: 1.65rem;
+        font-size: 1.5rem; /* ~24px */
+    }
+    
+    h4, .h4 {
+        font-size: 1.25rem; /* ~20px */
     }
     
     /* Adjust section spacing */
@@ -85,16 +130,7 @@
         padding: 60px 0;
     }
     
-    /* Improved mobile navigation */
-    .navbar-toggler {
-        border: none;
-        padding: 10px;
-    }
-    
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: none;
-    }
+    /* Mobile navigation handled by responsive-navbar.css */
     
     /* Adjust container padding */
     .container {
@@ -111,18 +147,20 @@
         display: none !important;
     }
     
-    /* Tighter padding and smaller text */
+    /* Tighter padding */
     #problem .container,
     #about .container {
         padding-left: 15px;
         padding-right: 15px;
     }
     
-    .problem-paragraph p,
-    #about .pq-title-description {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 15px;
+    /* Ensure consistent 16px font size for all paragraphs as requested */
+    p, .paragraph, .text-content, .description, .content-text, 
+    .problem-paragraph p, #about .pq-title-description, 
+    .career-description p, .position-details p {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 15px !important;
     }
     
     /* Center remaining image */
@@ -143,7 +181,9 @@
     #solution .pq-section-title {
         text-align: center;
     }
-    
+     .pq-section-title {
+        text-align: center;
+    }
     /* Features section: one service card per row */
     .pq-service-box-container .row > div {
         flex: 0 0 100%;
@@ -163,17 +203,27 @@
         text-align: center;
     }
     
-    /* Adjust font sizes for mobile */
+    /* Responsive heading sizes for mobile devices */
     h1, .h1 {
-        font-size: 1.8rem;
+        font-size: 1.875rem; /* 30px */
     }
     
     h2, .h2 {
-        font-size: 1.6rem;
+        font-size: 1.625rem; /* 26px */
     }
     
     h3, .h3 {
-        font-size: 1.4rem;
+        font-size: 1.375rem; /* 22px */
+    }
+    
+    h4, .h4 {
+        font-size: 1.125rem; /* 18px */
+    }
+    
+    /* Make buttons easier to tap on mobile */
+    .btn, button, input[type="button"], input[type="submit"] {
+        padding: 0.625rem 1.25rem;
+        font-size: 1rem; /* 16px */
     }
     
     /* Adjust spacing for mobile */
@@ -184,17 +234,38 @@
 
 /* SMALL MOBILE DEVICES */
 @media (max-width: 480px) {
-    /* Extreme mobile optimizations */
-    body {
-        font-size: 14px;
+    /* Maintain 16px for paragraphs but adjust other elements */
+    html {
+        font-size: 100%; /* Keep 16px base */
     }
     
+    /* Keep text readable on small screens */
+    body {
+        font-size: 1rem; /* 16px */
+    }
+    
+    /* Maintain 16px for all paragraph text as requested */
+    p, .paragraph, .text-content, .description, .content-text, 
+    li, td, blockquote, figcaption {
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+    
+    /* Adjust headings for small screens */
     h1, .h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem; /* 28px */
     }
     
     h2, .h2 {
-        font-size: 1.35rem;
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    h3, .h3 {
+        font-size: 1.25rem; /* 20px */
+    }
+    
+    h4, .h4 {
+        font-size: 1.125rem; /* 18px */
     }
     
     .container {
@@ -207,6 +278,33 @@
         padding: 30px 0;
     }
 }
+
+/* Base font sizing for all devices - Root level */
+html {
+    font-size: 100%; /* 16px base - the browser default */
+}
+
+body {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Default paragraph sizing */
+p {
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Default heading sizes */
+h1, .h1 { font-size: 2.5rem; }    /* 40px */
+h2, .h2 { font-size: 2rem; }      /* 32px */
+h3, .h3 { font-size: 1.75rem; }   /* 28px */
+h4, .h4 { font-size: 1.5rem; }    /* 24px */
+h5, .h5 { font-size: 1.25rem; }   /* 20px */
+h6, .h6 { font-size: 1rem; }      /* 16px */
 
 /* PRINT STYLES */
 @media print {
@@ -237,5 +335,230 @@
     /* Avoid page breaks inside important sections */
     .page-break-avoid {
         page-break-inside: avoid;
+    }
+}
+
+
+/* 
+ * Enhanced Responsive Navigation Styles
+ * Ensures consistent navbar behavior across all platforms
+ */
+
+/* Main navigation menu styles */
+.pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+/* Prevent text wrapping in menu items */
+.pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
+    white-space: nowrap;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    line-height: 90px;
+    display: inline-block;
+    letter-spacing: -0.01em; /* Better text spacing for Mac */
+}
+
+/* Adjust menu spacing for better fit */
+.pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
+    list-style: none;
+    margin-right: 20px; /* Reduced from 30px for better spacing */
+    position: relative;
+}
+
+/* Improve navbar toggler positioning and appearance */
+.pq-header-style-1 .pq-bottom-header .navbar .navbar-toggler {
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 12px;
+    border-radius: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    z-index: 100;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Container adjustments */
+.pq-bottom-header .container-fluid {
+    padding: 0 15px;
+}
+
+/* Responsive Logo Adjustments */
+.pq-header-logo {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.pq-header-logo .navbar-brand {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.pq-header-logo .navbar-brand img {
+    max-height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+/* Header contact and button adjustments */
+.pq-header-style-1 .pq-bottom-header .pq-header-right .pq-header-icon .pq-header-contact a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.pq-header-style-1 .pq-bottom-header .pq-header-right .pq-header-icon .pq-btn-container a {
+    white-space: nowrap;
+}
+
+/* Enhanced responsive breakpoints */
+@media (min-width: 1200px) {
+    /* Base font setup for desktop and up */
+    html {
+        font-size: 100%; /* 16px */
+    }
+    
+    /* Font sizing for menu items on large screens */
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
+        font-size: 1rem; /* 16px */
+    }
+    
+    /* Adjust spacing for larger screens */
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
+        margin-right: 25px;
+    }
+    
+    .pq-header-logo .navbar-brand img {
+        max-height: 70px; /* Larger logo on big screens */
+    }
+}
+
+@media (max-width: 1320px) and (min-width: 992px) {
+    /* Tighten spacing and reduce font size on medium screens */
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item {
+        margin-right: 15px;
+    }
+    
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
+        font-size: 14px;
+        letter-spacing: -0.02em; /* Better fit on Mac displays */
+    }
+    
+    /* Adjust contact info and button for medium screens */
+    .pq-header-style-1 .pq-bottom-header .pq-header-right .pq-header-icon .pq-header-contact span,
+    .pq-header-style-1 .pq-bottom-header .pq-header-right .pq-header-icon .pq-btn-container .pq-button .pq-button-text {
+        font-size: 13px;
+    }
+    
+    /* Adjust logo size for medium screens */
+    .pq-header-logo .navbar-brand img {
+        max-height: 55px;
+    }
+}
+
+/* Tablet breakpoint improvements */
+@media (max-width: 991px) {
+    /* Improved mobile navbar layout */
+    .pq-header-style-1 .pq-bottom-header .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo positioning on tablets */
+    .pq-header-logo {
+        max-width: none;
+        flex: 0 0 auto;
+    }
+    
+    .pq-header-logo .navbar-brand img {
+        max-height: 50px;
+    }
+    
+    /* Fixed positioning for mobile menu */
+    header#pq-header .pq-bottom-header .navbar .navbar-collapse {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        box-shadow: 0px 5px 15px 0px rgba(0, 33, 85, 0.1);
+        z-index: 999;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 0;
+    }
+    
+    /* Improved mobile menu styling */
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu > .menu-item {
+        margin-right: 0;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
+        width: 100%;
+        line-height: 24px;
+        padding: 5px 0;
+    }
+    
+    /* Header right section adjustments */
+    .pq-header-right {
+        display: none; /* Hide on tablets/mobile for cleaner layout */
+    }
+    
+    /* Reposition hamburger button */
+    .pq-header-style-1 .pq-bottom-header .navbar .navbar-toggler {
+        margin-left: auto;
+        order: 3;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    /* Center brand and improve header layout */
+    .pq-header-style-1 .navbar {
+        padding: 8px 0;
+    }
+    
+    .pq-header-logo .navbar-brand img {
+        max-height: 45px;
+    }
+    
+    /* Fix mobile navigation scrolling */
+    header#pq-header .pq-bottom-header .navbar .navbar-collapse {
+        max-height: 70vh;
+    }
+}
+
+/* Safari and Mac-specific fixes for text rendering */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .pq-header-style-1 .pq-bottom-header .pq-menu-contain .pq-main-menu .menu-item a {
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.02em; /* Better text spacing on macOS */
+        }
+        
+        .pq-header-logo .navbar-brand img {
+            image-rendering: -webkit-optimize-contrast; /* Sharper logo rendering on Mac */
+        }
     }
 }
