@@ -29,6 +29,13 @@
     transform: rotateY(180deg);
 }
 
+/* Touch device optimization for card flip */
+@media (hover: none) {
+    .pq-service-card:active .card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -114,6 +121,53 @@
 
 .card-back .card-link:hover {
     background-color: #f8f9fa;
+}
+
+/* Service Card animations */
+.pq-service-card.animated-in {
+    animation: fadeInUp 0.5s forwards;
+}
+
+.pq-service-card.hover-active .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Service indicator styles */
+.service-indicator {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.service-indicator span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile touch enhancements */
+@media (max-width: 767px) {
+    .pq-service-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .pq-service-card:active {
+        transform: scale(0.98);
+    }
 }
 
 /* ===================================

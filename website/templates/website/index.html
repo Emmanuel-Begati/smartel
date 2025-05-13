@@ -2,13 +2,16 @@
 {%load static%}
 
 {% block content %}
-    <!-- Include optimized CSS files -->
+    <!-- Include critical CSS files -->
     <link rel="stylesheet" href="{% static 'website/css/sections-optimized.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/components-optimized.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/slider-styles.css' %}">
     
-    <!-- Include Custom HTML Slider JavaScript -->
-    <script src="{% static 'website/js/slider-scripts.js' %}"></script>
+    <!-- Preload slider images for faster initial render -->
+    <link rel="preload" as="image" href="{% static 'website/image/section-image/group_new.png' %}">
+    
+    <!-- Include Custom HTML Slider JavaScript with async attribute -->
+    <script async src="{% static 'website/js/slider-scripts.js' %}"></script>
 
     <!-- banner --> 
     <div class="banner py-0">
@@ -118,7 +121,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="pq-image-border pq-ms-15">
-                                    <img class="pq-image-1" src="{% static 'website/image/about/about-us-img-1.png' %}" alt="smart agriculture technology" data-wow-delay="0.2s">
+                                    <img class="pq-image-1" src="{% static 'website/image/about/about-us-img-1.jpg' %}" alt="smart agriculture technology" data-wow-delay="0.2s">
                                 </div>
                             </div>
                             <div class="col-md-6 mt-4 mt-md-0">
@@ -364,34 +367,57 @@
                 // Initialize service cards with staggered animations
                 const serviceCards = document.querySelectorAll('.pq-service-card');
                 
+                // Check if we're on mobile
+                const isMobile = window.innerWidth <= 767;
+                
                 serviceCards.forEach((card, index) => {
                     // Add staggered entrance animation
                     setTimeout(() => {
                         card.classList.add('animated-in');
-                    }, index * 150);
+                    }, index * (isMobile ? 100 : 150));
                     
-                    // Add hover listeners for smooth transition
-                    card.addEventListener('mouseenter', function() {
-                        this.classList.add('hover-active');
-                        
-                        // Find siblings and reduce their opacity for focus effect
-                        serviceCards.forEach(sibling => {
-                            if (sibling !== card) {
-                                sibling.style.opacity = '0.8';
-                                sibling.style.transform = 'scale(0.98)';
+                    // Touch-friendly interaction for mobile
+                    if (isMobile) {
+                        // For mobile: Toggle flip on tap
+                        card.addEventListener('touchstart', function(e) {
+                            // Prevent default only if not already flipped to allow scrolling
+                            if (!this.querySelector('.card-inner').style.transform || 
+                                this.querySelector('.card-inner').style.transform !== 'rotateY(180deg)') {
+                                e.preventDefault();
                             }
+                            
+                            // Toggle flip state
+                            const currentTransform = this.querySelector('.card-inner').style.transform;
+                            if (currentTransform === 'rotateY(180deg)') {
+                                this.querySelector('.card-inner').style.transform = 'rotateY(0deg)';
+                            } else {
+                                this.querySelector('.card-inner').style.transform = 'rotateY(180deg)';
+                            }
+                        }, {passive: false});
+                    } else {
+                        // Desktop hover interactions
+                        card.addEventListener('mouseenter', function() {
+                            this.classList.add('hover-active');
+                            
+                            // Find siblings and reduce their opacity for focus effect
+                            serviceCards.forEach(sibling => {
+                                if (sibling !== card) {
+                                    sibling.style.opacity = '0.8';
+                                    sibling.style.transform = 'scale(0.98)';
+                                }
+                            });
                         });
-                    });
-                    
-                    card.addEventListener('mouseleave', function() {
-                        this.classList.remove('hover-active');
                         
-                        // Reset siblings
-                        serviceCards.forEach(sibling => {
-                            sibling.style.opacity = '1';
-                            sibling.style.transform = 'scale(1)';
+                        card.addEventListener('mouseleave', function() {
+                            this.classList.remove('hover-active');
+                            
+                            // Reset siblings
+                            serviceCards.forEach(sibling => {
+                                sibling.style.opacity = '1';
+                                sibling.style.transform = 'scale(1)';
+                            });
                         });
-                    });
+                    }
                 });
                 
                 // Add smooth scroll for navigation
@@ -403,6 +429,15 @@
                             behavior: 'smooth'
                         });
                     });
+                });
+                
+                // Handle resize events - reorganize layout if needed
+                window.addEventListener('resize', function() {
+                    const newIsMobile = window.innerWidth <= 767;
+                    if (newIsMobile !== isMobile) {
+                        // Reload page if switching between mobile and desktop
+                        location.reload();
+                    }
                 });
             });
         </script>

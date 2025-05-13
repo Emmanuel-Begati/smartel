@@ -137,6 +137,23 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+    
+    /* Service cards responsive adjustments for tablets */
+    .pq-service-card {
+        min-height: 300px;
+    }
+    
+    .card-front, .card-back {
+        padding: 25px 20px;
+    }
+    
+    .pq-service-box-title {
+        font-size: 1.1rem;
+    }
+    
+    .card-description, .pq-service-box-description {
+        font-size: 1rem;
+    }
 }
 
 /* MOBILE SPECIFIC */
@@ -181,14 +198,60 @@
     #solution .pq-section-title {
         text-align: center;
     }
-     .pq-section-title {
+    
+    .pq-section-title {
         text-align: center;
     }
-    /* Features section: one service card per row */
+    
+    /* Features section: service cards improvements for mobile */
     .pq-service-box-container .row > div {
         flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 20px;
+    }
+    
+    /* Service card adjustments for mobile */
+    .pq-service-card {
+        min-height: 280px;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        overflow: visible;
+    }
+    
+    .card-front, .card-back {
+        padding: 20px 15px;
+        height: auto;
+        min-height: 280px;
+    }
+    
+    .pq-service-box-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .pq-service-box-description {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .pq-service-box-icon i {
+        font-size: 36px;
+    }
+    
+    .pq-image-border {
+        margin-bottom: 10px;
+        max-height: 120px;
+        overflow: hidden;
+    }
+    
+    /* Improved mobile touch handling for service cards */
+    .pq-service-card .card-inner {
+        transition: transform 0.6s ease-in-out;
+    }
+    
+    .pq-service-card:active .card-inner {
+        transform: rotateY(180deg);
     }
     
     /* How Sentra Works: full-width steps */
@@ -232,6 +295,47 @@
     }
 }
 
+/* Landscape mode optimization for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    /* Adjust service cards for landscape mode */
+    .pq-service-card {
+        min-height: 250px;
+    }
+    
+    .card-front, .card-back {
+        min-height: 250px;
+        padding: 15px;
+    }
+    
+    /* Optimize layout for landscape */
+    .pq-service-box-container .row > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* Smaller icons and images in landscape */
+    .pq-service-box-icon i {
+        font-size: 32px;
+    }
+    
+    .pq-image-border {
+        max-height: 90px;
+    }
+    
+    /* Fix text overflow */
+    .pq-service-box-description {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        max-height: 120px;
+        overflow-y: auto;
+    }
+    
+    /* More compact spacing */
+    .pq-service-box-title {
+        margin-bottom: 8px;
+    }
+}
+
 /* SMALL MOBILE DEVICES */
 @media (max-width: 480px) {
     /* Maintain 16px for paragraphs but adjust other elements */
@@ -246,9 +350,42 @@
     
     /* Maintain 16px for all paragraph text as requested */
     p, .paragraph, .text-content, .description, .content-text, 
-    li, td, blockquote, figcaption {
+    li, td, blockquote, figcaption, .pq-service-box-description, .card-description {
         font-size: 16px !important;
-        line-height: 1.5;
+        line-height: 1.5 !important;
+    }
+    
+    /* Further optimize service cards for tiny screens */
+    .pq-service-card {
+        min-height: 220px;
+        margin-bottom: 12px;
+    }
+    
+    .card-front, .card-back {
+        padding: 15px 12px;
+        min-height: 220px;
+    }
+    
+    .pq-service-box-icon i {
+        font-size: 32px;
+    }
+    
+    /* Prevent text overflow on small screens */
+    .pq-service-box-description {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        max-height: 160px;
+        overflow-y: auto;
+    }
+    
+    /* Reduce image sizes */
+    .pq-image-border {
+        max-height: 90px;
+    }
+    
+    /* Improve touch target size for better UX */
+    .pq-service-card {
+        padding: 3px;
     }
     
     /* Adjust headings for small screens */
