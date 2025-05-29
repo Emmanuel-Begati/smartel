@@ -369,6 +369,11 @@
         // Optimize navbar interactions
         const navbarMenu = document.getElementById('navbarNavDropdown');
         const togglerButton = document.querySelector('.navbar-toggler');
+        const header = document.getElementById('pq-header');
+        
+        // Make navbar more compact immediately (don't wait for scroll)
+        if (window.innerWidth <= 991) {
+            if (header) header.classList.add('pq-header-sticky');
         
         if (navbarMenu && togglerButton) {
             // Close navbar when clicking outside - performance optimized
